@@ -11,7 +11,9 @@ This repository collects quantitative projects across different areas of finance
 - `machine-learning/housing-price-model-comparison`: linear, Lasso, and Ridge models for housing-price prediction with holdout tuning and forecast comparison tests.
 - `machine-learning/uk-default-classification`: logistic regression, trees, neural networks, and boosting for corporate default prediction.
 - `research-projects/capital-shortfall-under-geopolitical-stress`: DCC-GJR-GARCH based geopolitical stress testing and market-implied bank capital shortfall analysis.
-- `credit-risk/`: default modeling, credit scoring, and risk measurement.
+- `credit-risk/migration-and-default-risk`: one-factor Gaussian migration modeling with correlation-sensitive portfolio loss tails.
+- `credit-risk/cds-hazard-rate-bootstrapping`: CDS stripping from market spreads using simple and exact hazard-rate calibration.
+- `credit-risk/cva-equity-derivatives`: exposure simulation, CVA, collateral, and CDS hedging for a multi-asset derivatives portfolio.
 - `algorithmic-trading/`: strategy design, backtesting, and market data analysis.
 - `research-projects/`: longer-form academic or independent research work.
 
