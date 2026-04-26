@@ -14,7 +14,7 @@ This repository collects quantitative projects across different areas of finance
 - `credit-risk/migration-and-default-risk`: one-factor Gaussian migration modeling with correlation-sensitive portfolio loss tails.
 - `credit-risk/cds-hazard-rate-bootstrapping`: CDS stripping from market spreads using simple and exact hazard-rate calibration.
 - `credit-risk/cva-equity-derivatives`: exposure simulation, CVA, collateral, and CDS hedging for a multi-asset derivatives portfolio.
-- `algorithmic-trading/`: strategy design, backtesting, and market data analysis.
+- `algorithmic-trading/kalman-filter-pairs-trading`: state-space pairs trading with a dynamic hedge ratio and Kalman-filter mispricing signal.
 - `research-projects/`: longer-form academic or independent research work.
 
 ## How I Present These Projects

@@ -1,0 +1,10 @@
+metric,value
+entry_z,1.25
+exit_z,0.0
+transaction_cost_bps,5.0
+long_days,671.0
+short_days,467.0
+flat_days,369.0
+signal_changes,137.0
+avg_abs_beta,0.9989935232025142
+avg_alpha,-1.2691000579643186
