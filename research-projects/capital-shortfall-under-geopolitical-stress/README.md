@@ -159,7 +159,13 @@ where:
 The conditional correlation matrix is then obtained by normalization:
 
 $$
-R_t = \operatorname{diag}(Q_t)^{-1/2} Q_t \operatorname{diag}(Q_t)^{-1/2}.
+R_t = D_t^{-1} Q_t D_t^{-1},
+$$
+
+where
+
+$$
+D_t = \mathrm{diag}\left(\sqrt{q_{11,t}}, \sqrt{q_{22,t}}, \sqrt{q_{33,t}}\right).
 $$
 
 This is the key matrix step in the project. It gives a full time-varying correlation structure rather than a single constant correlation estimate.
@@ -188,15 +194,26 @@ $$
 \end{bmatrix}.
 $$
 
-Then the dynamic beta vector is
+Let the dynamic beta vector be
 
 $$
+\beta_{i,t} = 
 \begin{bmatrix}
 \beta^{m}_{i,t} \\
 \beta^{g}_{i,t}
-\end{bmatrix}
-=
-\Sigma_{FF,t}^{-1}\Sigma_{iF,t}.
+\end{bmatrix}.
+$$
+
+It is obtained from the linear system
+
+$$
+\Sigma_{FF,t}\beta_{i,t} = \Sigma_{iF,t},
+$$
+
+so equivalently
+
+$$
+\beta_{i,t} = \Sigma_{FF,t}^{-1}\Sigma_{iF,t}.
 $$
 
 This matters because the geopolitical beta is not estimated from a single static coefficient. It is re-computed every date from the evolving covariance matrix.
