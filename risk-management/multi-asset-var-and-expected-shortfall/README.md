@@ -86,13 +86,13 @@ Historical simulation uses the empirical loss distribution directly.
 For confidence level $1-\alpha$, the one-day VaR is the empirical quantile
 
 $$
-\operatorname{VaR}_{\alpha}^{HS} = Q_{1-\alpha}(L),
+VaR_{\alpha}^{HS} = Q_{1-\alpha}(L),
 $$
 
 and expected shortfall is the mean of losses beyond that quantile:
 
 $$
-\operatorname{ES}_{\alpha}^{HS} = \mathbb{E}[L \mid L \ge \operatorname{VaR}_{\alpha}^{HS}].
+ES_{\alpha}^{HS} = E[L \;|\; L \ge VaR_{\alpha}^{HS}].
 $$
 
 This method is fully data-driven. It captures skewness and kurtosis automatically, but it assumes the future will look like the past sample.
@@ -152,7 +152,7 @@ $$
 Their sample correlation matrix is
 
 $$
-P = \operatorname{Corr}(\tilde a_t).
+P = Corr(\tilde a_t).
 $$
 
 The conditional covariance matrix is then reconstructed as
@@ -192,7 +192,7 @@ $$
 Under a normal assumption, one-day VaR at tail probability $\alpha$ is
 
 $$
-\operatorname{VaR}_{\alpha}^{N}
+VaR_{\alpha}^{N}
 =
 V_0\left(-\mu_p - \sigma_p z_\alpha\right),
 $$
@@ -202,7 +202,7 @@ where $z_\alpha = \Phi^{-1}(\alpha)$.
 Expected shortfall becomes
 
 $$
-\operatorname{ES}_{\alpha}^{N}
+ES_{\alpha}^{N}
 =
 V_0\left(-\mu_p + \sigma_p \frac{\phi(z_\alpha)}{\alpha}\right).
 $$
@@ -228,7 +228,7 @@ $$
 the VaR formula becomes
 
 $$
-\operatorname{VaR}_{\alpha}^{t}
+VaR_{\alpha}^{t}
 =
 V_0\left(-\mu_p - \tilde{\sigma}_p q_\alpha\right).
 $$
@@ -236,7 +236,7 @@ $$
 Expected shortfall is
 
 $$
-\operatorname{ES}_{\alpha}^{t}
+ES_{\alpha}^{t}
 =
 V_0\left(
 -\mu_p +
@@ -255,7 +255,7 @@ Rather than selecting $\nu$ arbitrarily, the project pools standardized residual
 For each candidate $\nu \in \{3,4,5,6\}$, the fit is measured by
 
 $$
-\text{RMSE}(\nu)
+RMSE(\nu)
 =
 \sqrt{\frac{1}{n}\sum_{i=1}^n
 \left(
@@ -276,11 +276,7 @@ In this sample, the selected value is `df = 5`, which is a reasonable sign of he
 
 For each day in the out-of-sample period, the project re-estimates moments using an expanding window of past data only. This avoids look-ahead bias.
 
-If the one-day-ahead VaR forecast for date $t$ is $\operatorname{VaR}_{\alpha,t}$ and realized loss is $L_t$, then a violation indicator is
-
-$$
-I_t = \mathbf{1}\{L_t > \operatorname{VaR}_{\alpha,t}\}.
-$$
+If the one-day-ahead VaR forecast for date $t$ is $VaR_{\alpha,t}$ and realized loss is $L_t$, then the violation indicator equals `1` when $L_t > VaR_{\alpha,t}$ and `0` otherwise.
 
 The backtest checks:
 
@@ -310,7 +306,7 @@ $$
 The direct historical VaR of these block returns is then compared with
 
 $$
-\operatorname{VaR}_{h}^{SROT} = \sqrt{h}\,\operatorname{VaR}_{1}.
+VaR_{h}^{SROT} = \sqrt{h}\,VaR_{1}.
 $$
 
 This shows when iid-style scaling is too optimistic or too conservative relative to actual realized multiday tail losses.
