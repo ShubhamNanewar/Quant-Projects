@@ -29,29 +29,29 @@ sp500-option-pricing/
 
 The monthly simple return is computed as
 
-\[
+$$
 R_t = \frac{S_t}{S_{t-1}} - 1
-\]
+$$
 
 and the monthly log return is
 
-\[
+$$
 r_t = \log\left(\frac{S_t}{S_{t-1}}\right).
-\]
+$$
 
 For geometric Brownian motion, the stock price process is modeled as
 
-\[
+$$
 S_t = S_0 \exp\left(\left(\tilde{\mu} - \frac{1}{2}\tilde{\sigma}^2\right)t + \tilde{\sigma} W_t\right),
-\]
+$$
 
-where \(\tilde{\mu}\) and \(\tilde{\sigma}\) are estimated from the observed log returns. This makes the terminal stock price lognormal, which is why both simulation and Black-Scholes style calculations become natural tools here.
+where $\tilde{\mu}$ and $\tilde{\sigma}$ are estimated from the observed log returns. This makes the terminal stock price lognormal, which is why both simulation and Black-Scholes style calculations become natural tools here.
 
-For option pricing, the project also uses a recombining binomial tree. At each step, the stock either moves up by a factor \(u\) or down by a factor \(d\). Under the risk-neutral measure, the up probability is
+For option pricing, the project also uses a recombining binomial tree. At each step, the stock either moves up by a factor $u$ or down by a factor $d$. Under the risk-neutral measure, the up probability is
 
-\[
+$$
 q = \frac{1 + r - d}{u - d}.
-\]
+$$
 
 Backward induction then gives the no-arbitrage option price. As the number of steps increases, the binomial prices approach the Black-Scholes benchmark.
 

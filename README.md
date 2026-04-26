@@ -1,14 +1,19 @@
 # Academic Projects
 
-This repository collects academic projects that reflect my background in quantitative finance, stochastic processes, and technical problem solving. I use it to present course-based work in a clean and readable format, with enough context to make the main ideas and implementation easy to follow.
+This repository collects quantitative projects across different areas of finance, statistics, and data analysis. I use it to organize academic and applied work in a way that is easy to browse by topic and easy to understand from both the code and the write-up.
 
-## Current Projects
+## Project Areas
 
 - `stochastic-processes/sp500-option-pricing`: return modeling, GBM simulation, and option pricing with Black-Scholes and binomial trees.
+- `stochastic-processes/option-pricing-and-delta-hedging`: numerical option pricing and hedge P&L simulation across rebalancing frequencies.
+- `econometrics/`: econometric modeling, estimation, and empirical analysis.
+- `credit-risk/`: default modeling, credit scoring, and risk measurement.
+- `algorithmic-trading/`: strategy design, backtesting, and market data analysis.
+- `research-projects/`: longer-form academic or independent research work.
 
 ## How I Present These Projects
 
-Instead of uploading raw assignment files, I organize each project as a small standalone repository with:
+Instead of uploading raw course files, I structure each project as a clean standalone folder with:
 
 - clean code,
 - limited but intentional documentation,
@@ -16,4 +21,4 @@ Instead of uploading raw assignment files, I organize each project as a small st
 - reproducible inputs and outputs,
 - a structure that is easy to scan on GitHub.
 
-I will keep adding more academic and quantitative finance projects here over time.
+The goal is to make the repository feel like a structured quantitative portfolio rather than a collection of disconnected notebooks or submissions.
