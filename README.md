@@ -8,7 +8,6 @@ This repository collects quantitative projects across different areas of finance
 - `stochastic-processes/option-pricing-and-delta-hedging`: numerical option pricing and hedge P&L simulation across rebalancing frequencies.
 - `econometrics/fama-french-panel-analysis`: panel-data analysis of stock excess returns with CAPM and Fama-French factor models across sectors.
 - `econometrics/cross-exchange-etf-time-series`: ARMA, VAR, VECM, and GARCH modeling for the same ETF across multiple trading venues.
-- `econometrics/`: econometric modeling, estimation, and empirical analysis.
 - `machine-learning/housing-price-model-comparison`: linear, Lasso, and Ridge models for housing-price prediction with holdout tuning and forecast comparison tests.
 - `credit-risk/`: default modeling, credit scoring, and risk measurement.
 - `algorithmic-trading/`: strategy design, backtesting, and market data analysis.
