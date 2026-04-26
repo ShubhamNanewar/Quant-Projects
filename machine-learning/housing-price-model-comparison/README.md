@@ -62,6 +62,26 @@ for Ridge.
 
 For the log-target case, predicted values are transformed back into price space before evaluation.
 
+The prediction loss metrics are
+
+$$
+\text{MAE} = \frac{1}{n}\sum_{i=1}^n |y_i - \hat{y}_i|
+$$
+
+and
+
+$$
+\text{MSE} = \frac{1}{n}\sum_{i=1}^n (y_i - \hat{y}_i)^2.
+$$
+
+To compare two forecasting models more formally, I also use a Diebold-Mariano-style test based on the loss differential
+
+$$
+d_i = e_{1,i}^2 - e_{2,i}^2,
+$$
+
+where $e_{j,i} = y_i - \hat{y}_{j,i}$. The test statistic is the sample mean of $d_i$ divided by its estimated standard error. In this project it is used as a simple holdout comparison of squared prediction errors.
+
 ## Data And Preprocessing
 
 The dataset contains:

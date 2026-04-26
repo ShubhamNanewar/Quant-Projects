@@ -52,6 +52,31 @@ The project then compares this benchmark with:
 - gradient boosting,
 - a reduced two-feature decision tree.
 
+For the decision tree, the classifier recursively partitions the feature space into regions and assigns a default class to each terminal node. A split is chosen to reduce impurity, so the fitted rule is piecewise constant:
+
+$$
+\hat{y}(x) = \sum_{m=1}^{M} c_m \mathbf{1}\{x \in R_m\},
+$$
+
+where $R_m$ are the leaf regions and $c_m$ is the predicted class in that region.
+
+The neural-network classifier composes affine maps with nonlinear activations. For one hidden layer this can be written as
+
+$$
+h = \sigma(W_1 x + b_1), \qquad
+\hat{p}(x) = g(W_2 h + b_2),
+$$
+
+where $\sigma(\cdot)$ is the ReLU activation and $g(\cdot)$ is the output link used for classification.
+
+Gradient boosting builds an additive classifier sequentially:
+
+$$
+F_M(x) = \sum_{m=1}^{M} \nu f_m(x),
+$$
+
+where each weak learner $f_m$ is a shallow tree and $\nu$ is the learning rate. Each new tree is fitted to improve the current classification fit.
+
 Because defaults are relatively rare, the evaluation is not based on accuracy alone. I use
 
 $$
@@ -59,6 +84,26 @@ F_\beta = (1+\beta^2)\frac{\text{precision}\cdot\text{recall}}{\beta^2\cdot\text
 $$
 
 with $\beta = 2$, which puts more weight on recall than precision.
+
+The other reported metrics are
+
+$$
+\text{Accuracy} = \frac{TP + TN}{TP + TN + FP + FN},
+$$
+
+$$
+\text{Precision} = \frac{TP}{TP + FP},
+$$
+
+$$
+\text{Recall} = \frac{TP}{TP + FN},
+$$
+
+and
+
+$$
+F_1 = 2\frac{\text{precision}\cdot\text{recall}}{\text{precision}+\text{recall}}.
+$$
 
 ## Data And Preprocessing
 
