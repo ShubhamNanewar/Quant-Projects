@@ -45,17 +45,7 @@ The cleaned return file contains the final investable EUR return series:
 
 The selected final weights are
 
-$$
-w =
-\begin{bmatrix}
-0.16 \\
-0.08 \\
-0.24 \\
-0.08 \\
-0.24 \\
-0.20
-\end{bmatrix},
-$$
+$$ w = [0.16,\ 0.08,\ 0.24,\ 0.08,\ 0.24,\ 0.20]^\top. $$
 
 which sum to one and represent a EUR `1,000,000` portfolio.
 
@@ -65,15 +55,11 @@ The risky-asset block was originally motivated by mean-variance optimization on 
 
 If the daily simple return vector is $r_t$, then the portfolio return is
 
-$$
-r_{p,t} = w^\top r_t.
-$$
+$$ r_{p,t} = w^\top r_t. $$
 
 Daily EUR loss is defined as
 
-$$
-L_t = -V_0 r_{p,t},
-$$
+$$ L_t = -V_0 r_{p,t}. $$
 
 where $V_0 = 1{,}000{,}000$.
 
@@ -85,15 +71,11 @@ Historical simulation uses the empirical loss distribution directly.
 
 For confidence level $1-\alpha$, the one-day VaR is the empirical quantile
 
-$$
-VaR_{\alpha}^{HS} = Q_{1-\alpha}(L),
-$$
+$$ VaR_{\alpha}^{HS} = Q_{1-\alpha}(L). $$
 
 and expected shortfall is the mean of losses beyond that quantile:
 
-$$
-ES_{\alpha}^{HS} = E[L \;|\; L \ge VaR_{\alpha}^{HS}].
-$$
+$$ ES_{\alpha}^{HS} = E[L \;|\; L \ge VaR_{\alpha}^{HS}]. $$
 
 This method is fully data-driven. It captures skewness and kurtosis automatically, but it assumes the future will look like the past sample.
 
@@ -103,33 +85,23 @@ Filtered historical simulation first rescales returns by a time-varying volatili
 
 For each asset return $r_t$, the EWMA variance recursion is
 
-$$
-\sigma_t^2 = \lambda \sigma_{t-1}^2 + (1-\lambda) r_{t-1}^2,
-$$
+$$ \sigma_t^2 = \lambda \sigma_{t-1}^2 + (1-\lambda) r_{t-1}^2. $$
 
 with
 
-$$
-\lambda = 0.94.
-$$
+$$ \lambda = 0.94. $$
 
 Standardized residuals are then
 
-$$
-z_t = \frac{r_t}{\sigma_t}.
-$$
+$$ z_t = \frac{r_t}{\sigma_t}. $$
 
 The next-day volatility forecast is
 
-$$
-\sigma_{t+1|t} = \sqrt{\lambda \sigma_t^2 + (1-\lambda) r_t^2}.
-$$
+$$ \sigma_{t+1|t} = \sqrt{\lambda \sigma_t^2 + (1-\lambda) r_t^2}. $$
 
 Filtered historical scenarios are built as
 
-$$
-r_{t+1}^{(sim)} = z_t \sigma_{t+1|t}.
-$$
+$$ r_{t+1}^{(sim)} = z_t \sigma_{t+1|t}. $$
 
 This keeps the empirical shock shape from the historical sample while updating the scale to current market volatility.
 
@@ -139,27 +111,19 @@ The GARCH block follows the constant-correlation setup used in the original note
 
 For each asset innovation $a_t$, the univariate GARCH(1,1) variance is
 
-$$
-\sigma_t^2 = \omega + \alpha a_{t-1}^2 + \beta \sigma_{t-1}^2.
-$$
+$$ \sigma_t^2 = \omega + \alpha a_{t-1}^2 + \beta \sigma_{t-1}^2. $$
 
 After fitting each asset separately, the standardized innovations are
 
-$$
-\tilde a_t = \frac{a_t}{\sigma_t}.
-$$
+$$ \tilde a_t = \frac{a_t}{\sigma_t}. $$
 
 Their sample correlation matrix is
 
-$$
-P = Corr(\tilde a_t).
-$$
+$$ P = Corr(\tilde a_t). $$
 
 The conditional covariance matrix is then reconstructed as
 
-$$
-\Sigma_t = D_t P D_t,
-$$
+$$ \Sigma_t = D_t P D_t. $$
 
 where $D_t$ is the diagonal matrix of conditional volatilities.
 
@@ -171,9 +135,7 @@ This is the CCC-GARCH logic:
 
 Portfolio conditional volatility is
 
-$$
-\sigma_{p,t} = \sqrt{w^\top \Sigma_t w}.
-$$
+$$ \sigma_{p,t} = \sqrt{w^\top \Sigma_t w}. $$
 
 That conditional volatility then feeds directly into the normal VaR and ES formulas.
 
@@ -181,31 +143,19 @@ That conditional volatility then feeds directly into the normal VaR and ES formu
 
 Let $\mu$ be the mean vector and $\Sigma$ the covariance matrix of daily returns. Then portfolio mean and volatility are
 
-$$
-\mu_p = w^\top \mu,
-$$
+$$ \mu_p = w^\top \mu. $$
 
-$$
-\sigma_p = \sqrt{w^\top \Sigma w}.
-$$
+$$ \sigma_p = \sqrt{w^\top \Sigma w}. $$
 
 Under a normal assumption, one-day VaR at tail probability $\alpha$ is
 
-$$
-VaR_{\alpha}^{N}
-=
-V_0\left(-\mu_p - \sigma_p z_\alpha\right),
-$$
+$$ VaR_{\alpha}^{N} = V_0(-\mu_p - \sigma_p z_\alpha). $$
 
 where $z_\alpha = \Phi^{-1}(\alpha)$.
 
 Expected shortfall becomes
 
-$$
-ES_{\alpha}^{N}
-=
-V_0\left(-\mu_p + \sigma_p \frac{\phi(z_\alpha)}{\alpha}\right).
-$$
+$$ ES_{\alpha}^{N} = V_0\left(-\mu_p + \sigma_p \frac{\phi(z_\alpha)}{\alpha}\right). $$
 
 This model is easy to estimate and transparent, but it tends to understate extreme losses when return tails are too heavy.
 
@@ -215,36 +165,19 @@ To allow fatter tails, the project also uses a unit-variance Student-t distribut
 
 The portfolio standard deviation is still estimated from the covariance matrix, but the tail quantile comes from the Student-t law. With
 
-$$
-q_\alpha = t_\nu^{-1}(\alpha),
-$$
+$$ q_\alpha = t_\nu^{-1}(\alpha). $$
 
 and scale adjustment
 
-$$
-\tilde{\sigma}_p = \sigma_p \sqrt{\frac{\nu-2}{\nu}},
-$$
+$$ \tilde{\sigma}_p = \sigma_p \sqrt{\frac{\nu-2}{\nu}}. $$
 
 the VaR formula becomes
 
-$$
-VaR_{\alpha}^{t}
-=
-V_0\left(-\mu_p - \tilde{\sigma}_p q_\alpha\right).
-$$
+$$ VaR_{\alpha}^{t} = V_0(-\mu_p - \tilde{\sigma}_p q_\alpha). $$
 
 Expected shortfall is
 
-$$
-ES_{\alpha}^{t}
-=
-V_0\left(
--\mu_p +
-\tilde{\sigma}_p
-\frac{\nu + q_\alpha^2}{(\nu-1)\alpha}
-f_\nu(q_\alpha)
-\right),
-$$
+$$ ES_{\alpha}^{t} = V_0\left(-\mu_p + \tilde{\sigma}_p \frac{\nu + q_\alpha^2}{(\nu-1)\alpha} f_\nu(q_\alpha)\right). $$
 
 where $f_\nu$ is the Student-t density.
 
@@ -254,14 +187,7 @@ Rather than selecting $\nu$ arbitrarily, the project pools standardized residual
 
 For each candidate $\nu \in \{3,4,5,6\}$, the fit is measured by
 
-$$
-RMSE(\nu)
-=
-\sqrt{\frac{1}{n}\sum_{i=1}^n
-\left(
-z_{(i)} - q_{(i)}^{(\nu)}
-\right)^2},
-$$
+$$ RMSE(\nu) = \sqrt{\frac{1}{n}\sum_{i=1}^n \left(z_{(i)} - q_{(i)}^{(\nu)}\right)^2}. $$
 
 where:
 
@@ -299,15 +225,11 @@ The project also compares direct historical multiday VaR with square-root-of-tim
 
 For horizon $h$, non-overlapping compounded returns are constructed as
 
-$$
-R_{t,t+h} = \prod_{j=0}^{h-1}(1+r_{t+j}) - 1.
-$$
+$$ R_{t,t+h} = \prod_{j=0}^{h-1}(1+r_{t+j}) - 1. $$
 
 The direct historical VaR of these block returns is then compared with
 
-$$
-VaR_{h}^{SROT} = \sqrt{h}\,VaR_{1}.
-$$
+$$ VaR_{h}^{SROT} = \sqrt{h}\,VaR_{1}. $$
 
 This shows when iid-style scaling is too optimistic or too conservative relative to actual realized multiday tail losses.
 
@@ -321,9 +243,7 @@ The project also reports deterministic factor shocks for:
 
 For the loan block, a duration approximation is used:
 
-$$
-\Delta P \approx - D_{mod} \, P \, \Delta y.
-$$
+$$ \Delta P \approx - D_{mod} P \Delta y. $$
 
 This connects the rate shock directly to the fixed-income mark-to-market effect.
 
