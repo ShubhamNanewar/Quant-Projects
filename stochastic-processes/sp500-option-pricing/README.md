@@ -126,20 +126,6 @@ This repository is intentionally kept small. The code is organized as a single r
 - The risk-neutral probability of ending below `6300` after 60 months is about `53%`, and the Monte Carlo estimate is very close to the closed-form value.
 - The binomial call and put prices converge toward the Black-Scholes benchmarks as the number of steps increases.
 
-## Figures
+## Output
 
-### GBM Terminal Price Distribution
-
-![GBM terminal prices](figures/gbm_terminal_prices.png)
-
-### Call Price Convergence
-
-![Call convergence](figures/call_convergence.png)
-
-### Put Price Convergence
-
-![Put convergence](figures/put_convergence.png)
-
-### Binomial Terminal Log-Return Distribution
-
-![Binomial log-return distribution](figures/binomial_log_return_distribution.png)
+Running the script produces the main numerical summaries in the terminal and saves the visualizations to the local `figures/` directory. The repository keeps the analysis focused on the underlying model and implementation rather than turning the README into a full report.
