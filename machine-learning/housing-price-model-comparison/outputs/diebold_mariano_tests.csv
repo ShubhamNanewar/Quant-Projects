@@ -1,0 +1,7 @@
+split,comparison,model_a,model_b,dm_stat,p_value,price_model,log_model
+60/20/20,price best vs second,ridge,linear,-1.0440510693872742,0.2969840131205299,,
+60/20/20,log best vs second,lasso,linear,-0.7800505760682774,0.43574318766296427,,
+60/20/20,best price vs best log,,,-5.004287106981945,7.867123388294317e-07,ridge,lasso
+70/10/20,price best vs second,ridge,linear,-1.2324717442392632,0.2183712617454996,,
+70/10/20,log best vs second,lasso,linear,-0.7990790223764145,0.42463654639340787,,
+70/10/20,best price vs best log,,,-4.7068510253884055,3.2890685941477926e-06,ridge,lasso
