@@ -9,6 +9,7 @@ This repository collects quantitative projects across different areas of finance
 - `econometrics/fama-french-panel-analysis`: panel-data analysis of stock excess returns with CAPM and Fama-French factor models across sectors.
 - `econometrics/cross-exchange-etf-time-series`: ARMA, VAR, VECM, and GARCH modeling for the same ETF across multiple trading venues.
 - `machine-learning/housing-price-model-comparison`: linear, Lasso, and Ridge models for housing-price prediction with holdout tuning and forecast comparison tests.
+- `machine-learning/uk-default-classification`: logistic regression, trees, neural networks, and boosting for corporate default prediction.
 - `credit-risk/`: default modeling, credit scoring, and risk measurement.
 - `algorithmic-trading/`: strategy design, backtesting, and market data analysis.
 - `research-projects/`: longer-form academic or independent research work.
