@@ -1,0 +1,505 @@
+Ticker,sector,industry,country,employees
+A,Healthcare,Diagnostics & Research,United States,18000
+AAPL,Technology,Consumer Electronics,United States,150000
+ABBV,Healthcare,Drug Manufacturers - General,United States,55000
+ABNB,Consumer Cyclical,Travel Services,United States,7300
+ABT,Healthcare,Medical Devices,United States,114000
+ACGL,Financial Services,Insurance - Diversified,Bermuda,7200
+ACN,Technology,Information Technology Services,Ireland,791000
+ADBE,Technology,Software - Application,United States,30709
+ADI,Technology,Semiconductors,United States,24000
+ADM,Consumer Defensive,Farm Products,United States,42383
+ADP,Technology,Software - Application,United States,67000
+ADSK,Technology,Software - Application,United States,15300
+AEE,Utilities,Utilities - Regulated Electric,United States,8981
+AEP,Utilities,Utilities - Regulated Electric,United States,16330
+AES,Utilities,Utilities - Diversified,United States,9100
+AFL,Financial Services,Insurance - Life,United States,12694
+AIG,Financial Services,Insurance - Diversified,United States,22200
+AIZ,Financial Services,Insurance - Property & Casualty,United States,14200
+AJG,Financial Services,Insurance Brokers,United States,55493
+AKAM,Technology,Software - Infrastructure,United States,10944
+ALB,Basic Materials,Specialty Chemicals,United States,8300
+ALGN,Healthcare,Medical Instruments & Supplies,United States,21485
+ALL,Financial Services,Insurance - Property & Casualty,United States,55000
+ALLE,Industrials,Security & Protection Services,Ireland,14400
+AMAT,Technology,Semiconductor Equipment & Materials,United States,36100
+AMCR,Consumer Cyclical,Packaging & Containers,Switzerland,77000
+AMD,Technology,Semiconductors,United States,28000
+AME,Industrials,Specialty Industrial Machinery,United States,21500
+AMGN,Healthcare,Drug Manufacturers - General,United States,28000
+AMP,Financial Services,Asset Management,United States,13600
+AMT,Real Estate,REIT - Specialty,United States,4691
+AMZN,Consumer Cyclical,Internet Retail,United States,1546000
+ANET,Technology,Computer Hardware,United States,4412
+AON,Financial Services,Insurance Brokers,Ireland,60000
+AOS,Industrials,Specialty Industrial Machinery,United States,12700
+APA,Energy,Oil & Gas E&P,United States,2305
+APD,Basic Materials,Specialty Chemicals,United States,21850
+APH,Technology,Electronic Components,United States,125000
+APO,Financial Services,Asset Management,United States,5333
+APTV,Consumer Cyclical,Auto Parts,Switzerland,141000
+ARE,Real Estate,REIT - Office,United States,552
+ATO,Utilities,Utilities - Regulated Gas,United States,5260
+AVB,Real Estate,REIT - Residential,United States,2928
+AVGO,Technology,Semiconductors,United States,37000
+AVY,Consumer Cyclical,Packaging & Containers,United States,35000
+AWK,Utilities,Utilities - Regulated Water,United States,6700
+AXON,Industrials,Aerospace & Defense,United States,4100
+AXP,Financial Services,Credit Services,United States,75100
+AZO,Consumer Cyclical,Auto Parts,United States,75600
+BA,Industrials,Aerospace & Defense,United States,172000
+BAC,Financial Services,Banks - Diversified,United States,213000
+BALL,Consumer Cyclical,Packaging & Containers,United States,16000
+BAX,Healthcare,Medical Instruments & Supplies,United States,38000
+BBWI,Consumer Cyclical,Specialty Retail,United States,8975
+BBY,Consumer Cyclical,Specialty Retail,United States,85000
+BDX,Healthcare,Medical Instruments & Supplies,United States,70000
+BEN,Financial Services,Asset Management,United States,10100
+BFB,,,,
+BG,Consumer Defensive,Farm Products,United States,37000
+BIIB,Healthcare,Drug Manufacturers - General,United States,7605
+BK,Financial Services,Banks - Diversified,United States,49900
+BKNG,Consumer Cyclical,Travel Services,United States,24800
+BKR,Energy,Oil & Gas Equipment & Services,United States,57000
+BLDR,Industrials,Building Products & Equipment,United States,29000
+BLK,Financial Services,Asset Management,United States,22700
+BMY,Healthcare,Drug Manufacturers - General,United States,34100
+BR,Technology,Information Technology Services,United States,15000
+BRKB,,,,
+BRO,Financial Services,Insurance Brokers,United States,17403
+BSX,Healthcare,Medical Devices,United States,53000
+BX,Financial Services,Asset Management,United States,4895
+BXP,Real Estate,REIT - Office,United States,816
+C,Financial Services,Banks - Diversified,United States,230000
+CAG,Consumer Defensive,Packaged Foods,United States,18300
+CAH,Healthcare,Medical Distribution,United States,53084
+CARR,Industrials,Building Products & Equipment,United States,48000
+CAT,Industrials,Farm & Heavy Construction Machinery,United States,112900
+CB,Financial Services,Insurance - Property & Casualty,Switzerland,43000
+CBOE,Financial Services,Financial Data & Stock Exchanges,United States,1685
+CBRE,Real Estate,Real Estate Services,United States,140000
+CCI,Real Estate,REIT - Specialty,United States,3900
+CCL,Consumer Cyclical,Travel Services,United States,115000
+CDAY,,,,
+CDNS,Technology,Software - Application,United States,13152
+CDW,Technology,Information Technology Services,United States,15100
+CEG,Utilities,Utilities - Renewable,United States,14215
+CF,Basic Materials,Agricultural Inputs,United States,2800
+CFG,Financial Services,Banks - Regional,United States,17677
+CHD,Consumer Defensive,Household & Personal Products,United States,5750
+CHRW,Industrials,Integrated Freight & Logistics,United States,13166
+CHTR,Communication Services,Telecom Services,United States,94500
+CI,Healthcare,Healthcare Plans,United States,71295
+CINF,Financial Services,Insurance - Property & Casualty,United States,5624
+CL,Consumer Defensive,Household & Personal Products,United States,34000
+CLX,Consumer Defensive,Household & Personal Products,United States,7600
+CMCSA,Communication Services,Telecom Services,United States,182000
+CME,Financial Services,Financial Data & Stock Exchanges,United States,3760
+CMG,Consumer Cyclical,Restaurants,United States,130000
+CMI,Industrials,Specialty Industrial Machinery,United States,69600
+CMS,Utilities,Utilities - Regulated Electric,United States,8324
+CNC,Healthcare,Healthcare Plans,United States,60500
+CNP,Utilities,Utilities - Regulated Electric,United States,8872
+COF,Financial Services,Credit Services,United States,76500
+COIN,Financial Services,Financial Data & Stock Exchanges,United States,3772
+COO,Healthcare,Medical Instruments & Supplies,United States,16000
+COP,Energy,Oil & Gas E&P,United States,11700
+COR,Healthcare,Medical Distribution,United States,51000
+COST,Consumer Defensive,Discount Stores,United States,333000
+CPB,Consumer Defensive,Packaged Foods,United States,
+CPRT,Industrials,Specialty Business Services,United States,
+CPT,Real Estate,REIT - Residential,United States,1660
+CRL,Healthcare,Diagnostics & Research,United States,18700
+CRM,Technology,Software - Application,United States,76453
+CRWD,Technology,Software - Infrastructure,United States,10047
+CSCO,Technology,Communication Equipment,United States,86200
+CSGP,Real Estate,Real Estate Services,United States,6593
+CSX,Industrials,Railroads,United States,23500
+CTAS,Industrials,Specialty Business Services,United States,48300
+CTRA,Energy,Oil & Gas E&P,United States,915
+CTSH,Technology,Information Technology Services,United States,343800
+CTVA,Basic Materials,Agricultural Inputs,United States,22000
+CVS,Healthcare,Healthcare Plans,United States,219000
+CVX,Energy,Oil & Gas Integrated,United States,45298
+CZR,Consumer Cyclical,Resorts & Casinos,United States,50000
+D,Utilities,Utilities - Regulated Electric,United States,14700
+DAL,Industrials,Airlines,United States,103000
+DASH,Consumer Cyclical,Internet Retail,United States,23700
+DD,Basic Materials,Specialty Chemicals,United States,24000
+DDOG,Technology,Software - Application,United States,6500
+DE,Industrials,Farm & Heavy Construction Machinery,United States,75800
+DECK,Consumer Cyclical,Footwear & Accessories,United States,5500
+DELL,Technology,Computer Hardware,United States,108000
+DG,Consumer Defensive,Discount Stores,United States,194200
+DGX,Healthcare,Diagnostics & Research,United States,55000
+DHI,Consumer Cyclical,Residential Construction,United States,14766
+DHR,Healthcare,Diagnostics & Research,United States,61000
+DIS,Communication Services,Entertainment,United States,177080
+DLR,Real Estate,REIT - Specialty,United States,3936
+DLTR,Consumer Defensive,Discount Stores,United States,64434
+DOV,Industrials,Specialty Industrial Machinery,United States,24000
+DOW,Basic Materials,Chemicals,United States,36000
+DPZ,Consumer Cyclical,Restaurants,United States,6400
+DRI,Consumer Cyclical,Restaurants,United States,197924
+DTE,Utilities,Utilities - Regulated Electric,United States,4700
+DUK,Utilities,Utilities - Regulated Electric,United States,26413
+DVA,Healthcare,Medical Care Facilities,United States,76000
+DVN,Energy,Oil & Gas E&P,United States,2300
+DXCM,Healthcare,Medical Devices,United States,10200
+EA,Communication Services,Electronic Gaming & Multimedia,United States,14500
+EBAY,Consumer Cyclical,Internet Retail,United States,11500
+ECL,Basic Materials,Specialty Chemicals,United States,48000
+ED,Utilities,Utilities - Regulated Electric,United States,15097
+EFX,Industrials,Consulting Services,United States,15000
+EG,Financial Services,Insurance - Reinsurance,Bermuda,3037
+EIX,Utilities,Utilities - Regulated Electric,United States,14013
+EL,Consumer Defensive,Household & Personal Products,United States,40470
+ELV,Healthcare,Healthcare Plans,United States,104200
+EMN,Basic Materials,Specialty Chemicals,United States,14000
+EMR,Industrials,Specialty Industrial Machinery,United States,73000
+ENPH,Technology,Solar,United States,2781
+EOG,Energy,Oil & Gas E&P,United States,3150
+EPAM,Technology,Information Technology Services,United States,62050
+EQIX,Real Estate,REIT - Specialty,United States,13606
+EQR,Real Estate,REIT - Residential,United States,2500
+EQT,Energy,Oil & Gas E&P,United States,
+ERIE,Financial Services,Insurance Brokers,United States,6715
+ES,Utilities,Utilities - Regulated Electric,United States,10680
+ESS,Real Estate,REIT - Residential,United States,1712
+ETN,Industrials,Specialty Industrial Machinery,Ireland,94443
+ETR,Utilities,Utilities - Regulated Electric,United States,12000
+EVRG,Utilities,Utilities - Regulated Electric,United States,4731
+EW,Healthcare,Medical Devices,United States,15800
+EXC,Utilities,Utilities - Regulated Electric,United States,20000
+EXE,Energy,Oil & Gas E&P,United States,1500
+EXPD,Industrials,Integrated Freight & Logistics,United States,19666
+EXPE,Consumer Cyclical,Travel Services,United States,16500
+EXR,Real Estate,REIT - Industrial,United States,8012
+F,Consumer Cyclical,Auto Manufacturers,United States,169000
+FANG,Energy,Oil & Gas E&P,United States,1983
+FAST,Industrials,Industrial Distribution,United States,21807
+FCX,Basic Materials,Copper,United States,28500
+FDS,Financial Services,Financial Data & Stock Exchanges,United States,12579
+FDX,Industrials,Integrated Freight & Logistics,United States,300000
+FE,Utilities,Utilities - Regulated Electric,United States,12294
+FFIV,Technology,Software - Infrastructure,United States,6159
+FI,Technology,Information Technology Services,United States,38000
+FICO,Technology,Software - Application,United States,3855
+FIS,Technology,Information Technology Services,United States,50000
+FITB,Financial Services,Banks - Regional,United States,18690
+FLT,,,,
+FMC,Basic Materials,Agricultural Inputs,United States,5700
+FOX,Communication Services,Entertainment,United States,10400
+FOXA,Communication Services,Entertainment,United States,10400
+FRT,Real Estate,REIT - Retail,United States,304
+FSLR,Technology,Solar,United States,8100
+FTNT,Technology,Software - Infrastructure,United States,14898
+FTV,Technology,Scientific & Technical Instruments,United States,18000
+GD,Industrials,Aerospace & Defense,United States,117000
+GDDY,Technology,Software - Infrastructure,United States,5518
+GE,Industrials,Aerospace & Defense,United States,53000
+GEHC,Healthcare,Health Information Services,United States,53000
+GEN,Technology,Software - Infrastructure,United States,3500
+GEV,Industrials,Specialty Industrial Machinery,United States,76800
+GILD,Healthcare,Drug Manufacturers - General,United States,17600
+GIS,Consumer Defensive,Packaged Foods,United States,33000
+GL,Financial Services,Insurance - Life,United States,3732
+GLW,Technology,Electronic Components,United States,56300
+GM,Consumer Cyclical,Auto Manufacturers,United States,162000
+GNRC,Industrials,Specialty Industrial Machinery,United States,5389
+GOOG,Communication Services,Internet Content & Information,United States,187103
+GOOGL,Communication Services,Internet Content & Information,United States,187103
+GPC,Consumer Cyclical,Auto Parts,United States,63000
+GPN,Industrials,Specialty Business Services,United States,27000
+GRMN,Technology,Scientific & Technical Instruments,Switzerland,21800
+GS,Financial Services,Capital Markets,United States,45900
+GWW,Industrials,Industrial Distribution,United States,23500
+HAL,Energy,Oil & Gas Equipment & Services,United States,48000
+HAS,Consumer Cyclical,Leisure,United States,4985
+HBAN,Financial Services,Banks - Regional,United States,20166
+HCA,Healthcare,Medical Care Facilities,United States,226000
+HD,Consumer Cyclical,Home Improvement Retail,United States,470000
+HIG,Financial Services,Insurance - Property & Casualty,United States,19100
+HII,Industrials,Aerospace & Defense,United States,44000
+HLT,Consumer Cyclical,Lodging,United States,181000
+HOLX,Healthcare,Medical Instruments & Supplies,United States,7063
+HON,Industrials,Conglomerates,United States,102000
+HPE,Technology,Communication Equipment,United States,61000
+HPQ,Technology,Computer Hardware,United States,58000
+HRL,Consumer Defensive,Packaged Foods,United States,20000
+HSIC,Healthcare,Medical Distribution,United States,25000
+HST,Real Estate,REIT - Hotel & Motel,United States,165
+HSY,Consumer Defensive,Confectioners,United States,18540
+HUBB,Industrials,Electrical Equipment & Parts,United States,17800
+HUM,Healthcare,Healthcare Plans,United States,65680
+HWM,Industrials,Aerospace & Defense,United States,23930
+IBM,Technology,Information Technology Services,United States,270300
+ICE,Financial Services,Financial Data & Stock Exchanges,United States,12806
+IDXX,Healthcare,Diagnostics & Research,United States,11000
+IEX,Industrials,Specialty Industrial Machinery,United States,9000
+IFF,Basic Materials,Specialty Chemicals,United States,22400
+INCY,Healthcare,Biotechnology,United States,2617
+INTC,Technology,Semiconductors,United States,108900
+INTU,Technology,Software - Application,United States,18200
+INVH,Real Estate,REIT - Residential,United States,1750
+IP,Consumer Cyclical,Packaging & Containers,United States,65000
+IPG,Communication Services,Advertising Agencies,United States,51300
+IQV,Healthcare,Diagnostics & Research,United States,90000
+IR,Industrials,Specialty Industrial Machinery,United States,21000
+IRM,Real Estate,REIT - Specialty,United States,28850
+ISRG,Healthcare,Medical Instruments & Supplies,United States,15638
+IT,Technology,Information Technology Services,United States,20994
+ITW,Industrials,Specialty Industrial Machinery,United States,44000
+IVZ,Financial Services,Asset Management,United States,8407
+JBHT,Industrials,Integrated Freight & Logistics,United States,33646
+JBL,Technology,Electronic Components,United States,138000
+JCI,Industrials,Building Products & Equipment,Ireland,94000
+JKHY,Technology,Information Technology Services,United States,7240
+JNJ,Healthcare,Drug Manufacturers - General,United States,138100
+JPM,Financial Services,Banks - Diversified,United States,317160
+K,Consumer Defensive,Packaged Foods,United States,24000
+KDP,Consumer Defensive,Beverages - Non-Alcoholic,United States,29400
+KEY,Financial Services,Banks - Regional,United States,17105
+KEYS,Technology,Scientific & Technical Instruments,United States,15500
+KHC,Consumer Defensive,Packaged Foods,United States,36000
+KIM,Real Estate,REIT - Retail,United States,717
+KKR,Financial Services,Asset Management,United States,4834
+KLAC,Technology,Semiconductor Equipment & Materials,United States,15000
+KMB,Consumer Defensive,Household & Personal Products,United States,38000
+KMI,Energy,Oil & Gas Midstream,United States,10933
+KMX,Consumer Cyclical,Auto & Truck Dealerships,United States,30000
+KO,Consumer Defensive,Beverages - Non-Alcoholic,United States,69700
+KR,Consumer Defensive,Grocery Stores,United States,410000
+KVUE,Consumer Defensive,Household & Personal Products,United States,22000
+L,Financial Services,Insurance - Property & Casualty,United States,13000
+LDOS,Technology,Information Technology Services,United States,47000
+LEN,Consumer Cyclical,Residential Construction,United States,13265
+LH,Healthcare,Diagnostics & Research,United States,70000
+LHX,Industrials,Aerospace & Defense,United States,47000
+LII,Industrials,Building Products & Equipment,United States,14200
+LIN,Basic Materials,Specialty Chemicals,United Kingdom,64842
+LKQ,Consumer Cyclical,Auto Parts,United States,47000
+LLY,Healthcare,Drug Manufacturers - General,United States,47000
+LMT,Industrials,Aerospace & Defense,United States,121000
+LNT,Utilities,Utilities - Regulated Electric,United States,2998
+LOW,Consumer Cyclical,Home Improvement Retail,United States,300000
+LRCX,Technology,Semiconductor Equipment & Materials,United States,19000
+LULU,Consumer Cyclical,Apparel Retail,Canada,39000
+LUV,Industrials,Airlines,United States,72242
+LVS,Consumer Cyclical,Resorts & Casinos,United States,39900
+LW,Consumer Defensive,Packaged Foods,United States,10100
+LYB,Basic Materials,Specialty Chemicals,United States,20000
+LYV,Communication Services,Entertainment,United States,16200
+MA,Financial Services,Credit Services,United States,35300
+MAA,Real Estate,REIT - Residential,United States,2532
+MAR,Consumer Cyclical,Lodging,United States,418000
+MAS,Industrials,Building Products & Equipment,United States,18000
+MCD,Consumer Cyclical,Restaurants,United States,150000
+MCHP,Technology,Semiconductors,United States,19400
+MCK,Healthcare,Medical Distribution,United States,43000
+MCO,Financial Services,Financial Data & Stock Exchanges,United States,15913
+MDLZ,Consumer Defensive,Confectioners,United States,90000
+MDT,Healthcare,Medical Devices,Ireland,95000
+MET,Financial Services,Insurance - Life,United States,45000
+META,Communication Services,Internet Content & Information,United States,75945
+MGM,Consumer Cyclical,Resorts & Casinos,United States,60000
+MHK,Consumer Cyclical,"Furnishings, Fixtures & Appliances",United States,41900
+MKC,Consumer Defensive,Packaged Foods,United States,14100
+MKTX,Financial Services,Capital Markets,United States,881
+MLM,Basic Materials,Building Materials,United States,9400
+MMC,Financial Services,Insurance Brokers,United States,90000
+MMM,Industrials,Conglomerates,United States,61500
+MNST,Consumer Defensive,Beverages - Non-Alcoholic,United States,5527
+MO,Consumer Defensive,Tobacco,United States,6200
+MOH,Healthcare,Healthcare Plans,United States,18000
+MOS,Basic Materials,Agricultural Inputs,United States,13765
+MPC,Energy,Oil & Gas Refining & Marketing,United States,18300
+MPWR,Technology,Semiconductors,United States,4017
+MRK,Healthcare,Drug Manufacturers - General,United States,73000
+MRNA,Healthcare,Biotechnology,United States,5800
+MS,Financial Services,Capital Markets,United States,80000
+MSCI,Financial Services,Financial Data & Stock Exchanges,United States,6208
+MSFT,Technology,Software - Infrastructure,United States,228000
+MSI,Technology,Communication Equipment,United States,21000
+MTB,Financial Services,Banks - Regional,United States,22590
+MTCH,Communication Services,Internet Content & Information,United States,2500
+MTD,Healthcare,Diagnostics & Research,United States,16000
+MU,Technology,Semiconductors,United States,48000
+NCLH,Consumer Cyclical,Travel Services,United States,41700
+NDAQ,Financial Services,Financial Data & Stock Exchanges,United States,9492
+NDSN,Industrials,Specialty Industrial Machinery,United States,7700
+NEE,Utilities,Utilities - Regulated Electric,United States,16800
+NEM,Basic Materials,Gold,United States,22200
+NFLX,Communication Services,Entertainment,United States,14000
+NI,Utilities,Utilities - Regulated Gas,United States,7687
+NKE,Consumer Cyclical,Footwear & Accessories,United States,77800
+NOC,Industrials,Aerospace & Defense,United States,97000
+NOW,Technology,Software - Application,United States,26293
+NRG,Utilities,Utilities - Independent Power Producers,United States,15637
+NSC,Industrials,Railroads,United States,19600
+NTAP,Technology,Software - Infrastructure,United States,11700
+NTRS,Financial Services,Asset Management,United States,23400
+NUE,Basic Materials,Steel,United States,32700
+NVDA,Technology,Semiconductors,United States,36000
+NVR,Consumer Cyclical,Residential Construction,United States,7000
+NWS,Communication Services,Entertainment,United States,22300
+NWSA,Communication Services,Entertainment,United States,22300
+NXPI,Technology,Semiconductors,Netherlands,33100
+O,Real Estate,REIT - Retail,United States,468
+ODFL,Industrials,Trucking,United States,21719
+OKE,Energy,Oil & Gas Midstream,United States,5177
+OMC,Communication Services,Advertising Agencies,United States,74900
+ON,Technology,Semiconductors,United States,26400
+ORCL,Technology,Software - Infrastructure,United States,162000
+ORLY,Consumer Cyclical,Auto Parts,United States,92810
+OTIS,Industrials,Specialty Industrial Machinery,United States,72000
+OXY,Energy,Oil & Gas E&P,United States,13323
+PANW,Technology,Software - Infrastructure,United States,16068
+PARA,Communication Services,Entertainment,United States,18600
+PAYC,Technology,Software - Application,United States,7306
+PAYX,Technology,Software - Application,United States,19000
+PCAR,Industrials,Farm & Heavy Construction Machinery,United States,30100
+PCG,Utilities,Utilities - Regulated Electric,United States,28410
+PEAK,,,,
+PEG,Utilities,Utilities - Regulated Electric,United States,13047
+PEP,Consumer Defensive,Beverages - Non-Alcoholic,United States,319000
+PFE,Healthcare,Drug Manufacturers - General,United States,81000
+PFG,Financial Services,Asset Management,United States,19700
+PG,Consumer Defensive,Household & Personal Products,United States,109000
+PGR,Financial Services,Insurance - Property & Casualty,United States,66308
+PH,Industrials,Specialty Industrial Machinery,United States,57950
+PHM,Consumer Cyclical,Residential Construction,United States,6793
+PKG,Consumer Cyclical,Packaging & Containers,United States,15400
+PLD,Real Estate,REIT - Industrial,United States,2703
+PLTR,Technology,Software - Infrastructure,United States,4164
+PM,Consumer Defensive,Tobacco,United States,83100
+PNC,Financial Services,Banks - Regional,United States,53175
+PNR,Industrials,Specialty Industrial Machinery,United Kingdom,9750
+PNW,Utilities,Utilities - Regulated Electric,United States,6403
+PODD,Healthcare,Medical Devices,United States,3900
+POOL,Industrials,Industrial Distribution,United States,6000
+PPG,Basic Materials,Specialty Chemicals,United States,46000
+PPL,Utilities,Utilities - Regulated Electric,United States,6653
+PRU,Financial Services,Insurance - Life,United States,37936
+PSA,Real Estate,REIT - Industrial,United States,5900
+PSX,Energy,Oil & Gas Refining & Marketing,United States,13200
+PTC,Technology,Software - Application,United States,7000
+PWR,Industrials,Engineering & Construction,United States,58400
+PXD,,,,
+PYPL,Financial Services,Credit Services,United States,24400
+QCOM,Technology,Semiconductors,United States,49000
+RCL,Consumer Cyclical,Travel Services,United States,105950
+REG,Real Estate,REIT - Retail,United States,495
+REGN,Healthcare,Biotechnology,United States,15182
+RF,Financial Services,Banks - Regional,United States,19644
+RJF,Financial Services,Asset Management,United States,19000
+RL,Consumer Cyclical,Apparel Manufacturing,United States,15000
+RMD,Healthcare,Medical Instruments & Supplies,United States,10600
+ROK,Industrials,Specialty Industrial Machinery,United States,27000
+ROL,Consumer Cyclical,Personal Services,United States,20000
+ROP,Technology,Software - Application,United States,18200
+ROST,Consumer Cyclical,Apparel Retail,United States,107000
+RSG,Industrials,Waste Management,United States,42000
+RTX,Industrials,Aerospace & Defense,United States,186000
+RVTY,Healthcare,Diagnostics & Research,United States,11000
+SBAC,Real Estate,REIT - Specialty,United States,1720
+SBUX,Consumer Cyclical,Restaurants,United States,361000
+SCHW,Financial Services,Capital Markets,United States,32600
+SHW,Basic Materials,Specialty Chemicals,United States,63890
+SJM,Consumer Defensive,Packaged Foods,United States,8000
+SLB,Energy,Oil & Gas Equipment & Services,United States,110000
+SMCI,Technology,Computer Hardware,United States,6238
+SNA,Industrials,Tools & Accessories,United States,13000
+SNPS,Technology,Software - Infrastructure,United States,20000
+SO,Utilities,Utilities - Regulated Electric,United States,28314
+SOLV,Healthcare,Medical Instruments & Supplies,United States,22000
+SPG,Real Estate,REIT - Retail,United States,2600
+SPGI,Financial Services,Financial Data & Stock Exchanges,United States,42350
+SRE,Utilities,Utilities - Diversified,United States,16773
+STE,Healthcare,Medical Devices,United States,17787
+STLD,Basic Materials,Steel,United States,13000
+STT,Financial Services,Asset Management,United States,52014
+STX,Technology,Computer Hardware,Singapore,30000
+STZ,Consumer Defensive,Beverages - Brewers,United States,10600
+SWK,Industrials,Tools & Accessories,United States,48000
+SWKS,Technology,Semiconductors,United States,10100
+SYF,Financial Services,Credit Services,United States,20000
+SYK,Healthcare,Medical Devices,United States,53000
+SYY,Consumer Defensive,Food Distribution,United States,75000
+T,Communication Services,Telecom Services,United States,137550
+TAP,Consumer Defensive,Beverages - Brewers,United States,16800
+TDG,Industrials,Aerospace & Defense,United States,16600
+TDY,Technology,Scientific & Technical Instruments,United States,14900
+TECH,Healthcare,Biotechnology,United States,3100
+TEL,Technology,Electronic Components,Ireland,85000
+TER,Technology,Semiconductor Equipment & Materials,United States,6500
+TFC,Financial Services,Banks - Regional,United States,37996
+TGT,Consumer Defensive,Discount Stores,United States,440000
+TJX,Consumer Cyclical,Apparel Retail,United States,364000
+TKO,Communication Services,Entertainment,United States,
+TMO,Healthcare,Diagnostics & Research,United States,125000
+TMUS,Communication Services,Telecom Services,United States,70000
+TPL,Energy,Oil & Gas E&P,United States,111
+TPR,Consumer Cyclical,Luxury Goods,United States,12500
+TRGP,Energy,Oil & Gas Midstream,United States,3370
+TRMB,Technology,Scientific & Technical Instruments,United States,12100
+TROW,Financial Services,Asset Management,United States,8063
+TRV,Financial Services,Insurance - Property & Casualty,United States,34000
+TSCO,Consumer Cyclical,Specialty Retail,United States,52000
+TSLA,Consumer Cyclical,Auto Manufacturers,United States,125665
+TSN,Consumer Defensive,Farm Products,United States,138000
+TT,Industrials,Building Products & Equipment,Ireland,45000
+TTD,Communication Services,Advertising Agencies,United States,3522
+TTWO,Communication Services,Electronic Gaming & Multimedia,United States,12928
+TXN,Technology,Semiconductors,United States,34000
+TXT,Industrials,Aerospace & Defense,United States,34000
+TYL,Technology,Software - Application,United States,7542
+UAL,Industrials,Airlines,United States,111300
+UBER,Technology,Software - Application,United States,32700
+UDR,Real Estate,REIT - Residential,United States,1419
+UHS,Healthcare,Medical Care Facilities,United States,99300
+ULTA,Consumer Cyclical,Specialty Retail,United States,20000
+UNH,Healthcare,Healthcare Plans,United States,400000
+UNP,Industrials,Railroads,United States,29929
+UPS,Industrials,Integrated Freight & Logistics,United States,490000
+URI,Industrials,Rental & Leasing Services,United States,27900
+USB,Financial Services,Banks - Regional,United States,70000
+V,Financial Services,Credit Services,United States,
+VICI,Real Estate,REIT - Diversified,United States,27
+VLO,Energy,Oil & Gas Refining & Marketing,United States,9898
+VLTO,Industrials,Pollution & Treatment Controls,United States,17000
+VMC,Basic Materials,Building Materials,United States,11971
+VRSK,Industrials,Consulting Services,United States,7800
+VRSN,Technology,Software - Infrastructure,United States,929
+VRTX,Healthcare,Biotechnology,United States,6100
+VTR,Real Estate,REIT - Healthcare Facilities,United States,498
+VTRS,Healthcare,Drug Manufacturers - Specialty & Generic,United States,32000
+VZ,Communication Services,Telecom Services,United States,100000
+WAB,Industrials,Railroads,United States,29500
+WAT,Healthcare,Diagnostics & Research,United States,7600
+WBA,Healthcare,Pharmaceutical Retailers,United States,193000
+WBD,Communication Services,Entertainment,United States,35000
+WDAY,Technology,Software - Application,United States,19517
+WDC,Technology,Computer Hardware,United States,40000
+WEC,Utilities,Utilities - Regulated Electric,United States,7000
+WELL,Real Estate,REIT - Healthcare Facilities,United States,685
+WFC,Financial Services,Banks - Diversified,United States,212804
+WM,Industrials,Waste Management,United States,61700
+WMB,Energy,Oil & Gas Midstream,United States,5829
+WMT,Consumer Defensive,Discount Stores,United States,2100000
+WRB,Financial Services,Insurance - Property & Casualty,United States,8606
+WRK,,,,
+WSM,Consumer Cyclical,Specialty Retail,United States,19600
+WST,Healthcare,Medical Instruments & Supplies,United States,10600
+WTW,Financial Services,Insurance Brokers,United Kingdom,49000
+WY,Real Estate,REIT - Specialty,United States,9440
+WYNN,Consumer Cyclical,Resorts & Casinos,United States,28000
+XEL,Utilities,Utilities - Regulated Electric,United States,11380
+XOM,Energy,Oil & Gas Integrated,United States,61000
+XYL,Industrials,Specialty Industrial Machinery,United States,23000
+XYZ,Technology,Software - Infrastructure,United States,12000
+YUM,Consumer Cyclical,Restaurants,United States,40000
+ZBH,Healthcare,Medical Devices,United States,17000
+ZBRA,Technology,Communication Equipment,United States,9900
+ZTS,Healthcare,Drug Manufacturers - Specialty & Generic,United States,13800
