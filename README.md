@@ -16,7 +16,6 @@ This repository collects quantitative projects across different areas of finance
 - `credit-risk/cva-equity-derivatives`: exposure simulation, CVA, collateral, and CDS hedging for a multi-asset derivatives portfolio.
 - `algorithmic-trading/kalman-filter-pairs-trading`: state-space pairs trading with a dynamic hedge ratio and Kalman-filter mispricing signal.
 - `risk-management/multi-asset-var-and-expected-shortfall`: portfolio VaR, ES, tail fitting, and out-of-sample backtesting for a multi-asset EUR portfolio.
-- `research-projects/`: longer-form academic or independent research work.
 
 ## How I Present These Projects
 
