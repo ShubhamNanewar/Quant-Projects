@@ -1,0 +1,9 @@
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+.cache/
+data/raw/*.csv
+!data/raw/.gitkeep
+reports/tables/event_diagnostics.csv
+reports/tables/walk_forward_predictions.csv
