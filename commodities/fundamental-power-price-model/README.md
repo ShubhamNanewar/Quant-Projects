@@ -2,7 +2,7 @@
 
 A bottom-up merit-order and economic-dispatch model of the Dutch (NL) day-ahead electricity market. Derives the hourly clearing price from first principles — fuel costs, carbon price, plant efficiencies, and residual demand — and validates against actual ENTSO-E day-ahead prices.
 
-**Structural counterpart** to the [CAISO Power Spread Event Decision Framework](https://github.com/ShubhamNanewar/Quant-Projects), which learns the price empirically. Together they illustrate the two ways a power-trading desk forms a price view: bottom-up fundamentals and data-driven signals.
+**Structural counterpart** to the [CAISO Power Spread Event Decision Framework](https://github.com/ShubhamNanewar/Quant-Projects/tree/main/commodities/power-spread-event-decision-framework), which learns the price empirically. Together they illustrate the two ways a power-trading desk forms a price view: bottom-up fundamentals and data-driven signals.
 
 ---
 
