@@ -1,9 +1,40 @@
 """
-Trader-facing insight layer:
-  1. Fundamental residual (richness/cheapness indicator)
-  2. Price sensitivities to gas and carbon
-  3. Marginal-technology timeline and share analysis
-  4. Fuel-switch price recovery
+Trader-facing insight layer.
+
+1. Fundamental residual — actual DA price minus modelled price.
+   A persistently positive residual means the market clears above what the
+   fundamental stack implies: scarcity, congestion, import-coupling, or risk premia
+   are adding value the model cannot capture. A negative residual (market below
+   fundamentals) is rarer but occurs in high-VRE / low-demand hours when must-run
+   units push prices toward zero.
+
+2. Clean spark and dark spreads.
+   The *clean* spark spread (CSS) is the gross margin of a gas-fired CCGT after
+   paying for gas and carbon:
+       CSS = DA_price − (TTF / η_ccgt) − (EUA · EF_ccgt / η_ccgt)
+   The "clean" prefix means the carbon cost is included; without it the spread is
+   called the "dirty" spark spread. A positive CSS means the CCGT covers its variable
+   costs — it would run in a competitive market. Near zero or negative CSS indicates
+   the generator is at the margin or loss-making at spot prices.
+
+   The *clean* dark spread (CDS) is the equivalent for a hard-coal plant:
+       CDS = DA_price − (Coal / η_coal) − (EUA · EF_coal / η_coal)
+
+   The ratio CDS/CSS (and the gas-to-coal switch price below) determines which fuel
+   is cheaper to dispatch — the central question for the merit-order position.
+
+3. Gas-to-coal fuel-switch price and recovery.
+   At each hour the analytic switch price (the TTF level at which CCGT = hard coal
+   in SRMC) is computed and compared against actual TTF. When TTF > switch price,
+   coal should be the marginal fuel; when TTF < switch price, gas should be.
+   We check whether the dispatch model's actual marginal technology agrees.
+
+4. Price sensitivity to gas and carbon.
+   d(price)/d(TTF): if gas sets the price (CCGT is marginal), a EUR 1/MWh rise in
+   TTF raises the clearing price by 1/η_ccgt ≈ 1.85 EUR/MWh_e. This is the
+   "gas price pass-through" and is the core of European power-price sensitivity.
+   d(price)/d(EUA): if gas is marginal, a EUR 1/t CO2 rise raises price by
+   EF_ccgt/η_ccgt ≈ 0.37 EUR/MWh_e. These are read directly from the SRMC formula.
 """
 
 import pandas as pd
@@ -21,187 +52,372 @@ FIGS.mkdir(parents=True, exist_ok=True)
 # ---------------------------------------------------------------------------
 
 def compute_residual(panel: pd.DataFrame, dispatch: pd.DataFrame) -> pd.Series:
-    """actual DA price minus LP modelled price."""
+    """
+    Fundamental residual = actual DA price − modelled LP price.
+
+    Interpretation:
+      > 0  market is richer than fundamentals predict (scarcity, congestion, risk)
+      < 0  market is cheaper than fundamentals predict (excess renewables, must-run,
+           cheap imports suppressing price)
+      ~ 0  the stack explains the price; competitive fundamentals hold
+    """
     residual = panel["da_price_eur_mwh"] - dispatch["price_b"]
     residual.name = "fundamental_residual"
     return residual
 
 
-def plot_residual_vs_vre(df: pd.DataFrame, residual: pd.Series, save: bool = True):
-    vre = (df["wind_onshore_mw"] + df["wind_offshore_mw"] + df["solar_mw"]) / df["load_mw"]
-    fig, ax = plt.subplots(figsize=(8, 5))
-    sc = ax.scatter(vre, residual, alpha=0.15, s=3, c=df["ttf_eur_mwh"], cmap="viridis")
-    ax.axhline(0, color="red", lw=0.8, ls="--")
-    plt.colorbar(sc, ax=ax, label="TTF gas (EUR/MWh)")
-    ax.set_xlabel("VRE share of load")
+def plot_residual_vs_vre(
+    panel: pd.DataFrame,
+    residual: pd.Series,
+    save: bool = True,
+) -> plt.Figure:
+    """
+    Scatter of fundamental residual against VRE share of load, coloured by gas price.
+
+    Expected pattern:
+      At high VRE share the residual should turn negative (renewables push price
+      below what the thermal stack would imply) or highly variable (nuclear/import
+      floor effects). At low VRE the residual should cluster near zero if the stack
+      is well-calibrated.
+    """
+    vre_share = (
+        panel["wind_onshore_mw"] + panel["wind_offshore_mw"] + panel["solar_mw"]
+    ) / panel["load_mw"].replace(0, np.nan)
+
+    fig, ax = plt.subplots(figsize=(9, 5))
+    sc = ax.scatter(
+        vre_share, residual,
+        c=panel["ttf_eur_mwh"], cmap="plasma",
+        alpha=0.2, s=4, linewidths=0,
+    )
+    ax.axhline(0, color="black", lw=0.8, ls="--", label="Zero residual")
+    plt.colorbar(sc, ax=ax, label="TTF gas price (EUR/MWh)")
+    ax.set_xlabel("VRE share of total load")
     ax.set_ylabel("Fundamental residual (EUR/MWh)")
-    ax.set_title("Richness indicator: actual − modelled vs VRE penetration")
-    plt.tight_layout()
+    ax.set_title("Actual minus modelled price vs renewable penetration")
+    ax.legend(fontsize=8)
+    fig.tight_layout()
     if save:
         fig.savefig(FIGS / "residual_vs_vre.png", dpi=150)
     return fig
 
 
 # ---------------------------------------------------------------------------
-# 2. Price sensitivities
+# 2. Clean spark and dark spreads
 # ---------------------------------------------------------------------------
 
-def price_sensitivity_gas(
-    panel: pd.DataFrame,
-    dispatch_fn,
-    srmc_stack: pd.DataFrame,
-    capacity: dict,
-    delta_gas: float = 1.0,
-) -> pd.Series:
+def clean_spark_spread(panel: pd.DataFrame) -> pd.Series:
     """
-    Numerical d(price)/d(TTF): bump TTF by delta_gas, re-run dispatch, compute delta price.
-    Returns a Series of hourly sensitivities.
+    Clean spark spread (EUR/MWh_e):
+        CSS = DA_price − (TTF / η_ccgt) − (EUA · EF_ccgt / η_ccgt)
 
-    For speed we use the analytic shortcut: if the marginal tech uses gas,
-    sensitivity = 1 / eff_ccgt.  Otherwise 0.
+    The carbon term (EUA · EF_ccgt / η_ccgt) is the cost of CO2 allowances
+    per MWh of electricity generated by a CCGT. Including it gives the *clean*
+    spread; excluding it gives the dirty spark spread (not used here).
+
+    A positive CSS means a reference CCGT covers its variable costs at spot.
+    When CSS collapses toward zero, gas-fired generation is at the margin.
     """
     from stack import TECH_PARAMS
-    marginal_tech = dispatch_fn.get("marginal_tech_a", pd.Series("unknown", index=panel.index))
-
-    gas_techs = {t for t, (_, _, _, fk) in TECH_PARAMS.items() if fk == "ttf_eur_mwh"}
-    eff_map = {t: TECH_PARAMS[t][0] for t in gas_techs}
-
-    def _sensitivity(tech):
-        if tech in gas_techs:
-            return 1.0 / eff_map[tech]
-        return 0.0
-
-    sens = marginal_tech.map(_sensitivity)
-    sens.name = "dprice_dgas"
-    return sens
-
-
-def clean_spark_spread(panel: pd.DataFrame, eff_ccgt: float = 0.54) -> pd.Series:
-    """Clean spark spread: DA price − gas cost of generating 1 MWh_e via CCGT."""
-    spread = panel["da_price_eur_mwh"] - panel["ttf_eur_mwh"] / eff_ccgt
+    eff, ef_co2, _, _ = TECH_PARAMS["ccgt"]
+    fuel_cost   = panel["ttf_eur_mwh"] / eff
+    carbon_cost = panel["eua_eur_t"] * ef_co2 / eff
+    spread = panel["da_price_eur_mwh"] - fuel_cost - carbon_cost
     spread.name = "clean_spark_spread"
     return spread
 
 
-def clean_dark_spread(panel: pd.DataFrame, eff_coal: float = 0.40) -> pd.Series:
-    """Clean dark spread: DA price − (coal + carbon) cost of generating 1 MWh_e via hard coal."""
+def clean_dark_spread(panel: pd.DataFrame) -> pd.Series:
+    """
+    Clean dark spread (EUR/MWh_e):
+        CDS = DA_price − (Coal / η_coal) − (EUA · EF_coal / η_coal)
+
+    Equivalent margin for a reference hard-coal plant after paying for coal and carbon.
+    Positive CDS means coal generation covers variable costs at spot.
+    """
     from stack import TECH_PARAMS
-    _, ef_coal, _, _ = TECH_PARAMS["hard_coal"]
-    cost = panel["coal_eur_mwh_th"] / eff_coal + panel["eua_eur_t"] * ef_coal / eff_coal
-    spread = panel["da_price_eur_mwh"] - cost
+    eff, ef_co2, _, _ = TECH_PARAMS["hard_coal"]
+    fuel_cost   = panel["coal_eur_mwh_th"] / eff
+    carbon_cost = panel["eua_eur_t"] * ef_co2 / eff
+    spread = panel["da_price_eur_mwh"] - fuel_cost - carbon_cost
     spread.name = "clean_dark_spread"
     return spread
 
 
+def plot_spreads(panel: pd.DataFrame, save: bool = True) -> plt.Figure:
+    css = clean_spark_spread(panel)
+    cds = clean_dark_spread(panel)
+
+    fig, axes = plt.subplots(2, 1, figsize=(14, 7), sharex=True)
+
+    axes[0].plot(css.index, css.rolling(24).mean(), lw=0.9, color="steelblue", label="24h rolling mean")
+    axes[0].fill_between(css.index, css.rolling(24).mean(), 0, where=css.rolling(24).mean() > 0,
+                         alpha=0.15, color="steelblue")
+    axes[0].axhline(0, color="black", lw=0.8, ls="--")
+    axes[0].set_title("Clean Spark Spread — CCGT gross margin after gas + carbon cost")
+    axes[0].set_ylabel("EUR/MWh_e")
+    axes[0].legend(fontsize=8)
+
+    axes[1].plot(cds.index, cds.rolling(24).mean(), lw=0.9, color="saddlebrown", label="24h rolling mean")
+    axes[1].fill_between(cds.index, cds.rolling(24).mean(), 0, where=cds.rolling(24).mean() > 0,
+                         alpha=0.15, color="saddlebrown")
+    axes[1].axhline(0, color="black", lw=0.8, ls="--")
+    axes[1].set_title("Clean Dark Spread — hard coal gross margin after coal + carbon cost")
+    axes[1].set_ylabel("EUR/MWh_e")
+    axes[1].legend(fontsize=8)
+
+    fig.tight_layout()
+    if save:
+        fig.savefig(FIGS / "clean_spreads.png", dpi=150)
+    return fig
+
+
 # ---------------------------------------------------------------------------
-# 3. Marginal-technology timeline
+# 3. Gas-to-coal fuel-switch analysis
+# ---------------------------------------------------------------------------
+
+def fuel_switch_analysis(panel: pd.DataFrame, dispatch: pd.DataFrame) -> pd.DataFrame:
+    """
+    For each hour:
+      - Compute the analytic TTF switch price (SRMC_ccgt = SRMC_coal).
+      - Label whether gas or coal is theoretically cheaper.
+      - Check whether the dispatch model's marginal technology agrees.
+
+    Returns a DataFrame useful for model calibration: systematic disagreement
+    between the theoretical fuel-switch label and the dispatched marginal tech
+    points to capacity data or efficiency parameter problems.
+    """
+    from stack import fuel_switch_price_gas_vs_coal
+
+    switch = panel.apply(
+        lambda r: fuel_switch_price_gas_vs_coal(r["eua_eur_t"], r["coal_eur_mwh_th"]),
+        axis=1,
+    )
+
+    gas_cheaper = panel["ttf_eur_mwh"] < switch
+
+    mt = dispatch["marginal_tech_a"] if "marginal_tech_a" in dispatch.columns \
+         else pd.Series("unknown", index=panel.index)
+
+    model_gas_marginal  = mt.isin(["ccgt", "ocgt"])
+    model_coal_marginal = mt.isin(["hard_coal", "lignite"])
+
+    # Agreement: theoretical label matches model outcome
+    theory_says_gas  = gas_cheaper
+    theory_says_coal = ~gas_cheaper
+    agreement = (
+        (theory_says_gas  & model_gas_marginal) |
+        (theory_says_coal & model_coal_marginal)
+    )
+
+    return pd.DataFrame({
+        "ttf_eur_mwh":          panel["ttf_eur_mwh"],
+        "switch_price_eur_mwh": switch,
+        "gas_cheaper":          gas_cheaper,
+        "marginal_tech":        mt,
+        "model_gas_marginal":   model_gas_marginal,
+        "model_coal_marginal":  model_coal_marginal,
+        "theory_model_agree":   agreement,
+    }, index=panel.index)
+
+
+def plot_switch_price(panel: pd.DataFrame, switch_df: pd.DataFrame, save: bool = True) -> plt.Figure:
+    fig, ax = plt.subplots(figsize=(14, 5))
+    ax.plot(panel.index, switch_df["switch_price_eur_mwh"].rolling(24*7).mean(),
+            lw=1.2, label="Switch price (7-day mean)", color="darkgreen")
+    ax.plot(panel.index, panel["ttf_eur_mwh"].rolling(24*7).mean(),
+            lw=1.2, label="Actual TTF (7-day mean)", color="steelblue")
+    ax.fill_between(
+        panel.index,
+        panel["ttf_eur_mwh"].rolling(24*7).mean(),
+        switch_df["switch_price_eur_mwh"].rolling(24*7).mean(),
+        where=panel["ttf_eur_mwh"].rolling(24*7).mean() < switch_df["switch_price_eur_mwh"].rolling(24*7).mean(),
+        alpha=0.2, color="steelblue", label="Gas cheaper regime",
+    )
+    ax.fill_between(
+        panel.index,
+        panel["ttf_eur_mwh"].rolling(24*7).mean(),
+        switch_df["switch_price_eur_mwh"].rolling(24*7).mean(),
+        where=panel["ttf_eur_mwh"].rolling(24*7).mean() >= switch_df["switch_price_eur_mwh"].rolling(24*7).mean(),
+        alpha=0.2, color="saddlebrown", label="Coal cheaper regime",
+    )
+    ax.set_title("Gas-to-coal fuel-switch price vs actual TTF")
+    ax.set_ylabel("EUR/MWh_th")
+    ax.legend(fontsize=8)
+    fig.tight_layout()
+    if save:
+        fig.savefig(FIGS / "fuel_switch.png", dpi=150)
+    return fig
+
+
+# ---------------------------------------------------------------------------
+# 4. Price sensitivities
+# ---------------------------------------------------------------------------
+
+def compute_price_sensitivities(dispatch: pd.DataFrame) -> pd.DataFrame:
+    """
+    Analytic hourly price sensitivities, derived from the SRMC formula.
+
+    d(price)/d(TTF):
+      If gas (CCGT or OCGT) sets the price: 1/η_gas
+      Otherwise: 0
+
+    d(price)/d(EUA):
+      If gas is marginal: EF_gas / η_gas
+      If coal is marginal: EF_coal / η_coal
+      If nuclear is marginal: 0
+
+    These sensitivities are the "delta" of the power price to fuel/carbon inputs.
+    A gas-marginal system with η_ccgt = 0.54 has d(price)/d(TTF) ≈ 1.85:
+    a 10 EUR/MWh_th rise in gas raises the clearing price by ~18.5 EUR/MWh_e.
+    """
+    from stack import TECH_PARAMS
+
+    mt = dispatch.get("marginal_tech_a", pd.Series("unknown", index=dispatch.index))
+
+    eff_ccgt, ef_ccgt, _, _ = TECH_PARAMS["ccgt"]
+    eff_ocgt, ef_ocgt, _, _ = TECH_PARAMS["ocgt"]
+    eff_coal, ef_coal, _, _ = TECH_PARAMS["hard_coal"]
+
+    dprice_dgas  = mt.map({
+        "ccgt":       1.0 / eff_ccgt,
+        "ocgt":       1.0 / eff_ocgt,
+        "hard_coal":  0.0,
+        "lignite":    0.0,
+        "nuclear":    0.0,
+        "oil":        0.0,
+    }).fillna(0.0)
+
+    dprice_deua = mt.map({
+        "ccgt":       ef_ccgt / eff_ccgt,
+        "ocgt":       ef_ocgt / eff_ocgt,
+        "hard_coal":  ef_coal / eff_coal,
+        "lignite":    0.0,
+        "nuclear":    0.0,
+        "oil":        0.0,
+    }).fillna(0.0)
+
+    return pd.DataFrame({
+        "marginal_tech":  mt,
+        "dprice_dgas":    dprice_dgas,
+        "dprice_deua":    dprice_deua,
+    }, index=dispatch.index)
+
+
+# ---------------------------------------------------------------------------
+# 5. Marginal-technology timeline
 # ---------------------------------------------------------------------------
 
 def marginal_tech_monthly_share(dispatch: pd.DataFrame) -> pd.DataFrame:
-    """Monthly share (%) of hours each technology sets the price (Method A)."""
+    """
+    Monthly share (% of hours) of each technology setting the price under Method A.
+    A high CCGT share means gas drives the power price that month.
+    """
     if "marginal_tech_a" not in dispatch.columns:
-        raise ValueError("dispatch must contain marginal_tech_a (run Method A)")
+        raise ValueError("dispatch must contain marginal_tech_a (requires Method A run)")
+
     df = dispatch[["marginal_tech_a"]].copy()
     df["month"] = df.index.to_period("M")
     counts = df.groupby(["month", "marginal_tech_a"]).size().unstack(fill_value=0)
-    share = counts.div(counts.sum(axis=1), axis=0) * 100
-    return share
+    return counts.div(counts.sum(axis=1), axis=0) * 100
 
 
-def plot_marginal_tech_stacked(share: pd.DataFrame, save: bool = True):
+def plot_marginal_tech_stacked(share: pd.DataFrame, save: bool = True) -> plt.Figure:
+    tech_colors = {
+        "nuclear":        "#7B68EE",
+        "lignite":        "#8B4513",
+        "hard_coal":      "#696969",
+        "ccgt":           "#4169E1",
+        "ocgt":           "#87CEEB",
+        "oil":            "#FF8C00",
+        "capacity_short": "#DC143C",
+    }
+    cols = [c for c in share.columns if c in tech_colors]
+    colors = [tech_colors[c] for c in cols]
+
     fig, ax = plt.subplots(figsize=(14, 5))
-    share.plot.area(ax=ax, stacked=True, alpha=0.85)
-    ax.set_title("Monthly share of price-setting technology")
-    ax.set_ylabel("% of hours")
+    share[cols].plot.area(ax=ax, stacked=True, color=colors, alpha=0.85)
+    ax.set_title("Monthly share of hours each technology sets the clearing price")
+    ax.set_ylabel("% of hours in month")
     ax.set_xlabel("")
-    ax.legend(loc="upper right", fontsize=8)
-    plt.tight_layout()
+    ax.legend(loc="upper right", fontsize=8, ncol=2)
+    ax.set_ylim(0, 100)
+    fig.tight_layout()
     if save:
         fig.savefig(FIGS / "marginal_tech_timeline.png", dpi=150)
     return fig
 
 
-def plot_spreads(panel: pd.DataFrame, save: bool = True):
-    css = clean_spark_spread(panel)
-    cds = clean_dark_spread(panel)
-
-    fig, axes = plt.subplots(2, 1, figsize=(14, 7), sharex=True)
-    axes[0].plot(css.index, css.rolling(24).mean(), lw=0.8)
-    axes[0].axhline(0, color="red", lw=0.8, ls="--")
-    axes[0].set_title("Clean Spark Spread (24h rolling mean)")
-    axes[0].set_ylabel("EUR/MWh")
-
-    axes[1].plot(cds.index, cds.rolling(24).mean(), lw=0.8, color="saddlebrown")
-    axes[1].axhline(0, color="red", lw=0.8, ls="--")
-    axes[1].set_title("Clean Dark Spread (24h rolling mean)")
-    axes[1].set_ylabel("EUR/MWh")
-
-    plt.tight_layout()
-    if save:
-        fig.savefig(FIGS / "spreads.png", dpi=150)
-    return fig
-
-
 # ---------------------------------------------------------------------------
-# 4. Fuel-switch recovery
+# Main entry point
 # ---------------------------------------------------------------------------
 
-def fuel_switch_analysis(panel: pd.DataFrame, dispatch: pd.DataFrame) -> pd.DataFrame:
+def run_insights(panel: pd.DataFrame, dispatch: pd.DataFrame) -> dict:
     """
-    For each hour, compute the analytic gas-to-coal switching price and compare to
-    actual TTF to label whether gas or coal should theoretically be the cheaper option.
-    Compare against what the dispatch model actually dispatched.
+    Compute and print all trader-facing insights; save plots and CSVs.
+    Returns a dict of key Series for downstream use.
     """
-    from stack import fuel_switch_price_gas_vs_coal
+    print("\n" + "=" * 55)
+    print("  Trader insight layer")
+    print("=" * 55)
 
-    switch_prices = panel.apply(
-        lambda r: fuel_switch_price_gas_vs_coal(r["eua_eur_t"], r["coal_eur_mwh_th"]),
-        axis=1,
-    )
-
-    df = pd.DataFrame({
-        "ttf_eur_mwh":    panel["ttf_eur_mwh"],
-        "switch_price":   switch_prices,
-        "gas_cheaper":    panel["ttf_eur_mwh"] < switch_prices,
-        "marginal_tech":  dispatch.get("marginal_tech_a", pd.Series("unknown", index=panel.index)),
-    })
-
-    return df
-
-
-def run_insights(panel: pd.DataFrame, dispatch: pd.DataFrame):
+    # 1. Residual
     residual = compute_residual(panel, dispatch)
+    print(f"\nFundamental residual (actual − modelled):")
+    print(f"  Mean : {residual.mean():+.2f} EUR/MWh")
+    print(f"  Std  : {residual.std():.2f} EUR/MWh")
+    print(f"  P5   : {residual.quantile(0.05):+.2f}")
+    print(f"  P95  : {residual.quantile(0.95):+.2f}")
+    frac_pos = (residual > 0).mean()
+    print(f"  Fraction positive (market above fundamentals): {frac_pos:.1%}")
+    plot_residual_vs_vre(panel, residual)
 
-    df = panel.copy()
-    df["residual"] = residual
-
-    print("\n--- Insights ---")
-    print(f"Mean fundamental residual: {residual.mean():.2f} EUR/MWh")
-    print(f"  (positive = market consistently above fundamentals)")
-
-    # Spreads
+    # 2. Spreads
     css = clean_spark_spread(panel)
     cds = clean_dark_spread(panel)
-    print(f"\nClean Spark Spread  mean: {css.mean():.2f}  std: {css.std():.2f}")
-    print(f"Clean Dark Spread   mean: {cds.mean():.2f}  std: {cds.std():.2f}")
+    print(f"\nClean Spark Spread (CCGT margin):")
+    print(f"  Mean {css.mean():.2f}  Std {css.std():.2f}  "
+          f"Negative in {(css < 0).mean():.1%} of hours")
+    print(f"Clean Dark Spread (coal margin):")
+    print(f"  Mean {cds.mean():.2f}  Std {cds.std():.2f}  "
+          f"Negative in {(cds < 0).mean():.1%} of hours")
+    plot_spreads(panel)
 
-    # Fuel switch
+    # 3. Fuel switch
     sw = fuel_switch_analysis(panel, dispatch)
-    frac = sw["gas_cheaper"].mean()
-    print(f"\nFraction of hours where TTF < switch price (gas cheaper): {frac:.1%}")
+    frac_gas_cheaper = sw["gas_cheaper"].mean()
+    frac_agree = sw["theory_model_agree"].mean()
+    print(f"\nFuel-switch analysis:")
+    print(f"  Gas cheaper than coal in {frac_gas_cheaper:.1%} of hours")
+    print(f"  Theory and dispatch model agree on fuel regime in {frac_agree:.1%} of hours")
+    plot_switch_price(panel, sw)
 
-    # Timeline
+    # 4. Sensitivities
+    sens = compute_price_sensitivities(dispatch)
+    mean_dgas = sens["dprice_dgas"].mean()
+    mean_deua = sens["dprice_deua"].mean()
+    print(f"\nPrice sensitivities (year-average across all hours):")
+    print(f"  d(price)/d(TTF) = {mean_dgas:.3f} EUR/MWh_e per EUR/MWh_th")
+    print(f"  d(price)/d(EUA) = {mean_deua:.3f} EUR/MWh_e per EUR/t CO2")
+    print(f"  (Non-zero only when a gas or coal unit is marginal)")
+
+    # 5. Marginal-tech timeline
     if "marginal_tech_a" in dispatch.columns:
         share = marginal_tech_monthly_share(dispatch)
         plot_marginal_tech_stacked(share)
+        print(f"\nMarginal technology (annual share of hours):")
+        for tech, frac in (dispatch["marginal_tech_a"].value_counts() / len(dispatch)).items():
+            print(f"  {tech:16s}: {frac:.1%}")
 
-    # Plots
-    plot_residual_vs_vre(df, residual)
-    plot_spreads(panel)
+    # Save outputs
+    residual.to_csv(ROOT / "reports" / "fundamental_residual.csv")
+    sw.to_csv(ROOT / "reports" / "fuel_switch.csv")
+    sens.to_csv(ROOT / "reports" / "price_sensitivities.csv")
 
-    # Save residual
-    out = ROOT / "reports" / "fundamental_residual.csv"
-    residual.to_csv(out)
-    print(f"\n  Residual saved to {out}")
-
-    return residual, css, cds, sw
+    return {
+        "residual": residual,
+        "clean_spark_spread": css,
+        "clean_dark_spread":  cds,
+        "fuel_switch":        sw,
+        "sensitivities":      sens,
+    }

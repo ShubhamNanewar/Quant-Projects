@@ -9,11 +9,11 @@ A bottom-up merit-order and economic-dispatch model of the Dutch (NL) day-ahead 
 ## What the model does
 
 1. **Merit-order stack** — computes the short-run marginal cost (SRMC) of six thermal technologies (nuclear, lignite, hard coal, CCGT, OCGT, oil) from hourly fuel and carbon prices.
-2. **Residual demand** — subtracts must-run renewables (wind, solar, hydro run-of-river) and nuclear from total load to get the thermal demand the stack must cover.
-3. **Method A (analytic)** — walks up the merit order until demand is met; the SRMC of the marginal unit is the modelled clearing price.
-4. **Method B (LP)** — solves the economic dispatch linear programme; the dual variable of the demand-balance constraint gives the system marginal price. Methods A and B agree; the LP is the generalisable OR formulation.
-5. **Validation** — compares modelled price against actual ENTSO-E day-ahead prices across the year, with conditional metrics by VRE penetration, demand level, gas-price regime, season, and day type.
-6. **Trader insights** — fundamental residual (actual minus modelled) as a richness/cheapness indicator; clean spark and dark spreads; marginal-technology timeline; fuel-switch price recovery.
+2. **Residual demand** — subtracts must-run variable renewables (wind, solar) and run-of-river hydro from total load. Nuclear sits at the bottom of the thermal stack (lowest SRMC) and is dispatched by the LP rather than subtracted from demand, avoiding double-counting.
+3. **Method A (analytic)** — walks up the merit order until cumulative capacity meets residual demand; the SRMC of the marginal unit is the modelled clearing price.
+4. **Method B (LP)** — solves the economic dispatch linear programme using scipy HiGHS; the dual variable of the demand-balance equality constraint gives the system marginal price. Methods A and B agree; the LP is the generalisable OR formulation and the one that scales to extensions.
+5. **Validation** — compares modelled price against actual ENTSO-E day-ahead prices across the year, with overall metrics (MAE, RMSE, bias, correlation) and conditional metrics by VRE penetration, demand level, gas-price regime, season, and day type. Includes a dispatch-mix comparison (modelled vs actual generation per type).
+6. **Trader insights** — fundamental residual (actual minus modelled) as a richness/cheapness indicator; clean spark spread (CSS) and clean dark spread (CDS) — both including the carbon cost; gas-to-coal fuel-switch price recovery; hourly price sensitivities to gas and carbon.
 
 ---
 
@@ -114,8 +114,8 @@ Full discussion in `docs/limitations.md`.
 - Python 3.10+
 - `entsoe-py` — ENTSO-E Transparency Platform wrapper
 - `pandas`, `numpy`
-- `PuLP` — dispatch LP (CBC solver)
-- `matplotlib`, `seaborn`
+- `scipy.optimize.linprog` (HiGHS solver) — dispatch LP; used instead of PuLP because HiGHS reliably exposes dual variables via `result.eqlin.marginals`, which CBC does not always do
+- `matplotlib`
 
 ---
 

@@ -1,8 +1,10 @@
 # Model Limitations
 
-This document states the known simplifications honestly. Each limitation should be mentioned in the README and in any presentation of results.
+Every limitation here is real and should be stated in any presentation of results. The model is useful precisely because its residual reveals what it cannot explain.
 
-## 1. Island-dispatch assumption
+---
+
+## 1. Island-dispatch assumption (most material for NL)
 The LP treats the Netherlands as an electrically isolated system. In reality NL is one of the most interconnected bidding zones in continental Europe, with significant flows to/from DE, BE, GB, DK2, and NO2. The effect:
 - In hours when NL imports cheap continental power, the model overestimates the clearing price (it dispatches expensive domestic units instead).
 - In hours when NL imports expensive power (e.g. during European scarcity), the model underestimates the price.
