@@ -55,13 +55,13 @@ def main():
     fig, axes = plt.subplots(1,3,figsize=(13,4),layout='constrained')
     labels=['Hourly baseline','RF price','RF price + demand']
     for ax,col,title in zip(axes,['mae','directional_accuracy','selected_mean_less_1_usd_per_mwh'],
-                            ['2025 MAE ($/MWh)','2025 directional accuracy','Selected signed spread less $1/MWh']):
+                            ['2025 MAE ($/MWh)','2025 directional accuracy','Signed-spread proxy less $1/MWh']):
         ax.bar(labels,metrics[col],color=['#627D98','#007F86','#D78532'])
         ax.set_title(title,fontsize=11)
         ax.tick_params(axis='x',labelrotation=25)
         ax.spines[['top','right']].set_visible(False)
         if col.startswith('selected'):ax.axhline(0,color='gray',linewidth=.8)
-    fig.suptitle('Frozen 2024 models, full 2025 evaluation: demand data tested, not assumed useful',fontsize=12)
+    fig.suptitle('2025 forecast test: frozen models and thresholds\nSigned-spread scenarios are not executable trading P&L',fontsize=12)
     figs=ROOT/'reports/figures/fundamental_extension';figs.mkdir(parents=True,exist_ok=True)
     fig.savefig(figs/'2025_comparison.png',dpi=150)
     plt.close(fig)

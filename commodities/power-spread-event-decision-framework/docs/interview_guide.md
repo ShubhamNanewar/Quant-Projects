@@ -24,3 +24,7 @@ Use this only after reviewing the implementation yourself and being able to repr
 ## Reading sequence
 
 Read `README.md`, `reports/validation_audit.md`, `src/validation_audit.py`, the tests, and then inspect individual rows of saved predictions. Recalculate mean selected spread, the cost hurdle and a few threshold decisions by hand. Read the linked CAISO and Modo methodology pages before referring to them in an interview.
+
+## The 2025 extension
+
+Read `reports/fundamental_extension.md` before discussing the extension. The price-based RF reduced MAE 5.3% versus an hourly baseline; adding system and regional demand forecasts did not improve it further. The experiment was specified in commit `ef70afb` before full evaluation. Positive signed-spread diagnostics are not executable profits: most selections predict RT below an already-fixed DA reference, and that DA price is not an available intraday entry. Be able to explain why a model can improve MAE without improving directional accuracy or outperforming a simple rule on selected-hour averages.

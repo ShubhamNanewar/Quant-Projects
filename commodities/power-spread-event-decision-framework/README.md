@@ -2,18 +2,25 @@
 
 **One detailed power-market research project.** Analyse price components, compare forecasting methods, and decide whether a signal survives realistic questions about information timing and risk.
 
-## Start here: the conservative validation audit
+## Start here: two transparent evaluations of one research question
 
-The extended evaluation does **not** establish a tradable edge. Random Forest selected 189 of 3,433 evaluation hours with a mean RT-minus-DA spread of $0.682/MWh; a hypothetical $1/MWh hurdle erased the average advantage. The approximate daily-bootstrap interval includes zero. This is a monitoring/research prototype, not a live strategy.
+The dataset now covers **17,544 hourly CAISO observations across 2024–2025**, with archived day-ahead system and regional demand forecasts.
 
-- [Full research report, decision framework and weather hypotheses](reports/validation_audit.md)
-- [Interview and learning guide](docs/interview_guide.md)
-- [Validation code](src/validation_audit.py) and [temporal-integrity tests](tests/test_validation_audit.py)
-- [Results and reproducibility manifest](reports/tables/validation_audit/)
+| Evaluation | Main finding | Read |
+|---|---|---|
+| Conservative 2024 signal audit | Selected positive spreads averaged $0.682/MWh; an illustrative $1/MWh hurdle removed the average advantage. | [Audit and risk framework](reports/validation_audit.md) |
+| Frozen 2024 models, full 2025 test | Price-based RF reduced MAE 5.3% versus an hourly baseline. Added demand forecasts did not improve it further. | [External-year experiment](reports/fundamental_extension.md) |
 
-![Validation and decision comparison](reports/figures/validation_audit/01_model_comparison.png)
+The 2025 signed-spread selection diagnostic is positive, but **not executable trading P&L**. It references an already-fixed DA price, has no executable quotes, and lacks complete publication vintages. These are different experiments; do not compare their headline hit rates directly.
 
-The original exploratory analysis below is preserved for context. Its top-decile ranking uses the full test prediction distribution and is retrospective; **use the audit above for current conclusions**. The two evaluations use different features and time periods, so their headline scores are not like-for-like.
+![2025 forecast comparison](reports/figures/fundamental_extension/2025_comparison.png)
+
+- [Frozen experiment protocol](docs/fundamental_extension_protocol.md)
+- [Interview guide](docs/interview_guide.md)
+- [2025 results and manifest](reports/tables/fundamental_extension/)
+- [Temporal-integrity tests](tests/)
+
+The original exploratory analysis below is preserved for context. Its top-decile ranking uses the full test prediction distribution and is retrospective. Use the reports above for current conclusions.
 
 ## Original exploratory study
 

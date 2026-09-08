@@ -1,0 +1,4 @@
+split,raw_hours,retained_hours,excluded_missing_hours
+train,6312,6312,0
+calibration,2161,2161,0
+test,8760,8760,0

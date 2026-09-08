@@ -1,0 +1,27 @@
+{
+  "python": "3.9.6",
+  "sklearn": "1.6.1",
+  "source_sha256": {
+    "caiso_th_np15_da_rt_2024.csv": "62dd7b81f9fec23bb71d5e0b759d182dc77012e6027f6bff007e06ff32eef94b",
+    "prices_2025.csv": "2d9d1e0ceb2bdf8a9899af6b062963c619721aa7e24706bc948284e26596351e",
+    "demand_forecasts.csv": "45c951c090353fc45ad65105153877a10705d94d6966548250da8dc99fa054f6"
+  },
+  "comparison": {
+    "rf_price": {
+      "mean_mae_improvement": -0.05968899601770639,
+      "daily_bootstrap_95pct_interval": [
+        -0.1666841515897256,
+        0.03969604014691401
+      ]
+    },
+    "hourly_baseline": {
+      "mean_mae_improvement": 0.3889102495869828,
+      "daily_bootstrap_95pct_interval": [
+        0.2521778123443383,
+        0.5139784225455909
+      ]
+    }
+  },
+  "note": "Positive error improvement favours demand model. Daily bootstrap conditions on fitted models and assumes independent days.",
+  "availability": "Archived DAM inputs; publication/revision vintages not available. Forecasting experiment, not executable trading."
+}
