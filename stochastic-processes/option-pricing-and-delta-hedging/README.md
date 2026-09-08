@@ -1,5 +1,7 @@
 # Option Pricing and Delta Hedging
 
+[Validated results, numerical corrections and limitations](VALIDATION.md). Pricing and hedge accounting have been reviewed, tested and regenerated; see the report before interpreting the figures.
+
 This project looks at the same market from two angles: pricing a European call option with different numerical methods, and managing the risk of that option through delta hedging. The focus is on how the methods compare, how close they stay to the Black-Scholes benchmark, and how hedging frequency affects the trader's profit and loss.
 
 ## What This Project Covers
@@ -93,6 +95,6 @@ python3 src/analysis.py
 
 The script prints pricing and hedging summaries and saves plots to `figures/`.
 
-## Why I Kept This Project
+## Research Purpose
 
 This one is worth keeping in the portfolio because it shows more than formula application. It combines financial modeling, numerical methods, and trading-risk intuition in one project. That gives it stronger signal than a standard coursework notebook, especially for roles related to derivatives, quant research, or risk.

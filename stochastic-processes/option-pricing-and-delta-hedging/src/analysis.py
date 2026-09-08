@@ -135,8 +135,8 @@ def monte_carlo_call_price(
     return float(np.exp(-rate * maturity) * payoff.mean())
 
 
-def crank_nicolson_call_price(spot: float, strike: float, rate: float, sigma: float, maturity: float, grid_points: int, time_steps: int) -> float:
-    max_spot = 3 * spot
+def crank_nicolson_call_price(spot: float, strike: float, rate: float, sigma: float, maturity: float, grid_points: int, time_steps: int, domain_multiple: float = 3.0) -> float:
+    max_spot = domain_multiple * spot
     d_spot = max_spot / grid_points
     dt = maturity / time_steps
     stock_grid = np.linspace(0, max_spot, grid_points + 1)
@@ -158,11 +158,12 @@ def crank_nicolson_call_price(spot: float, strike: float, rate: float, sigma: fl
     interior = option_values[1:-1].copy()
 
     for n in range(time_steps):
-        time = maturity - (n + 1) * dt
-        upper_boundary = max_spot - strike * np.exp(-rate * time)
+        tau_old, tau_new = n * dt, (n + 1) * dt
+        upper_old = max_spot - strike * np.exp(-rate * tau_old)
+        upper_new = max_spot - strike * np.exp(-rate * tau_new)
         rhs = right_matrix.dot(interior)
         rhs[0] += alpha[0] * 0.0
-        rhs[-1] += gamma[-1] * upper_boundary
+        rhs[-1] += gamma[-1] * (upper_old + upper_new)
         interior = spsolve(left_matrix, rhs)
 
     option_values[1:-1] = interior
@@ -201,20 +202,24 @@ def simulate_delta_hedge_pnl(
     option_count = contracts * contract_size
     initial_premium = black_scholes_call_price(spot, strike, rate, sigma, maturity)
 
-    stock_position = np.zeros(paths, dtype=float)
-    cash_account = np.full(paths, option_count * initial_premium, dtype=float)
+    # Establish the hedge at inception. Cash earns interest over each holding
+    # interval before a rebalance; maturity requires settlement, not a new hedge.
+    initial_delta = black_scholes_delta(spot, strike, rate, sigma, maturity)
+    stock_position = np.full(paths, initial_delta, dtype=float)
+    cash_account = np.full(paths, option_count * (initial_premium - initial_delta * spot))
     gamma_track = np.zeros((paths, hedge_steps), dtype=float)
 
     for step in range(1, hedge_steps + 1):
-        tau = maturity - step * dt
-        current_prices = price_paths[:, step]
-        delta_new = np.asarray(black_scholes_delta(current_prices, strike, rate, sigma, tau), dtype=float)
-        gamma_new = np.asarray(black_scholes_gamma(current_prices, strike, rate, sigma, tau), dtype=float)
-
-        gamma_track[:, step - 1] = np.abs(gamma_new)
-        cash_account -= option_count * (delta_new - stock_position) * current_prices
-        stock_position = delta_new
+        tau_start = maturity - (step - 1) * dt
+        gamma_track[:, step - 1] = np.abs(black_scholes_gamma(
+            price_paths[:, step - 1], strike, rate, sigma, tau_start))
         cash_account *= np.exp(rate * dt)
+        if step < hedge_steps:
+            tau = maturity - step * dt
+            current_prices = price_paths[:, step]
+            delta_new = np.asarray(black_scholes_delta(current_prices, strike, rate, sigma, tau))
+            cash_account -= option_count * (delta_new - stock_position) * current_prices
+            stock_position = delta_new
 
     terminal_prices = price_paths[:, -1]
     terminal_portfolio = option_count * stock_position * terminal_prices + cash_account
@@ -239,11 +244,13 @@ def save_line_plot(x: list[int], y: list[float], reference: float, title: str, y
 
 
 def save_histograms(results: dict[str, np.ndarray], filename: str) -> None:
-    fig, axes = plt.subplots(1, len(results), figsize=(15, 4.8), sharey=True)
+    fig, axes = plt.subplots(1, len(results), figsize=(15, 4.8), sharex=True, sharey=True)
+    pooled = np.concatenate(list(results.values())) / 1000
+    bins = np.linspace(pooled.min(), pooled.max(), 75)
     for ax, (label, values) in zip(axes, results.items()):
-        ax.hist(values, bins=50, color="#1f77b4", edgecolor="white")
+        ax.hist(values / 1000, bins=bins, color="#1f77b4", edgecolor="white")
         ax.set_title(label)
-        ax.set_xlabel("Terminal P&L")
+        ax.set_xlabel("Terminal P&L (thousands of currency units)")
     axes[0].set_ylabel("Frequency")
     fig.tight_layout()
     fig.savefig(FIGURES_DIR / filename, dpi=200)
@@ -390,6 +397,10 @@ def main() -> None:
         ]
     )
     print(hedging_table.round(6).to_string(index=False))
+    output_dir = ROOT / "outputs"
+    output_dir.mkdir(exist_ok=True)
+    pricing_table.to_csv(output_dir / "pricing_comparison.csv", index=False)
+    hedging_table.to_csv(output_dir / "hedging_summary.csv", index=False)
 
     print("\nGamma exposure")
     print(
