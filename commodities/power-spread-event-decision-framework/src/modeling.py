@@ -91,6 +91,8 @@ def walk_forward_backtest(
 
 
 def signal_summary(results: pd.DataFrame, model: str = "random_forest") -> dict[str, float]:
+    # Retrospective ranking only: threshold uses the complete test distribution.
+    # See validation_audit.py for a threshold fixed using prior calibration data.
     subset = results.loc[results["model"] == model].copy()
     threshold = subset["prediction"].quantile(0.90)
     signal = subset.loc[subset["prediction"] >= threshold].copy()

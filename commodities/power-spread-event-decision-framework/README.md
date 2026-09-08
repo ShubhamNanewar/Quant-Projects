@@ -1,4 +1,22 @@
-# Power Spread Event Decision Framework
+# CAISO Power Spreads: Forecasts, Risk and Decision Discipline
+
+**One detailed power-market research project.** Analyse price components, compare forecasting methods, and decide whether a signal survives realistic questions about information timing and risk.
+
+## Start here: the conservative validation audit
+
+The extended evaluation does **not** establish a tradable edge. Random Forest selected 189 of 3,433 evaluation hours with a mean RT-minus-DA spread of $0.682/MWh; a hypothetical $1/MWh hurdle erased the average advantage. The approximate daily-bootstrap interval includes zero. This is a monitoring/research prototype, not a live strategy.
+
+- [Full research report, decision framework and weather hypotheses](reports/validation_audit.md)
+- [Interview and learning guide](docs/interview_guide.md)
+- [Validation code](src/validation_audit.py) and [temporal-integrity tests](tests/test_validation_audit.py)
+- [Results and reproducibility manifest](reports/tables/validation_audit/)
+
+![Validation and decision comparison](reports/figures/validation_audit/01_model_comparison.png)
+
+The original exploratory analysis below is preserved for context. Its top-decile ranking uses the full test prediction distribution and is retrospective; **use the audit above for current conclusions**. The two evaluations use different features and time periods, so their headline scores are not like-for-like.
+
+## Original exploratory study
+
 
 I built this project to understand how real-time power prices correct day-ahead market expectations.
 
@@ -11,9 +29,9 @@ RT LMP - DA LMP
 In plain terms:
 
 ```text
-day-ahead = what the market expected
-real-time = what actually happened
-spread = the correction
+day-ahead = auction price reflecting bids, constraints and expectations
+real-time = later market-clearing price
+spread = difference between those price outcomes
 ```
 
 The project uses public CAISO OASIS data for `TH_NP15_GEN-APND` in 2024. I chose this source because it provides matched day-ahead and real-time LMPs and includes the price components needed to explain large moves: energy, congestion, and losses.
