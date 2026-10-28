@@ -22,6 +22,10 @@ The 2025 signed-spread selection diagnostic is positive, but **not executable tr
 
 The original exploratory analysis below is preserved for context. Its top-decile ranking uses the full test prediction distribution and is retrospective. Use the reports above for current conclusions.
 
+## Trading-desk diagnostics
+
+[Delivery-hour, season, tail-outcome and hypothetical-cost diagnostics](reports/desk_diagnostics.md) deepen the risk analysis of the frozen 2025 forecasts. These are post-hoc diagnostics, not a new trading backtest or evidence of executable P&L.
+
 ## Original exploratory study
 
 
