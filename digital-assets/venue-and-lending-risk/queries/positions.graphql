@@ -1,0 +1,10 @@
+query Positions($ids: [String!], $skip: Int) {
+  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,
+    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {
+    items {
+      id healthFactor
+      market { marketId }
+      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }
+    }
+  }
+}

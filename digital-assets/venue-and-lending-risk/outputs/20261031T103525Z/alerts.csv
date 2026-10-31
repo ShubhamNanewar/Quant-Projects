@@ -1,0 +1,64 @@
+entity,rule,severity,value,threshold,action
+0xdd0f28e19C1780eb6396170735D45153D261490d,collateral_concentration,review,0.659307086959911,0.5,Review correlated collateral and issuer exposure
+0x974c8FBf4fd795F66B85B73ebC988A51F1A040a9,collateral_concentration,review,1.0,0.5,Review correlated collateral and issuer exposure
+coinbase:0,snapshot_timing,reject,94.48141700000079,2000.0,Do not use snapshot for execution decisions
+coinbase:2,snapshot_timing,reject,74.5698329999982,2000.0,Do not use snapshot for execution decisions
+coinbase:5,snapshot_timing,reject,70.08891699999964,2000.0,Do not use snapshot for execution decisions
+coinbase:17,snapshot_timing,reject,64.56274999999323,2000.0,Do not use snapshot for execution decisions
+coinbase:20,snapshot_timing,reject,79.38724999999636,2000.0,Do not use snapshot for execution decisions
+coinbase:23,snapshot_timing,reject,83.14691699999344,2000.0,Do not use snapshot for execution decisions
+b938a7c2155d,low_health_factor,review,1.0379447180963381,1.05,Verify current debt and oracle on a common block
+72def2bb330f,low_health_factor,review,1.0267527491339565,1.05,Verify current debt and oracle on a common block
+0e177bd5fcb2,low_health_factor,review,1.0499716070414538,1.05,Verify current debt and oracle on a common block
+d4e720cf9676,low_health_factor,review,1.0357239049776288,1.05,Verify current debt and oracle on a common block
+ff9511caa88c,low_health_factor,review,1.0424218821724498,1.05,Verify current debt and oracle on a common block
+d43367131b13,low_health_factor,review,1.0283939950154162,1.05,Verify current debt and oracle on a common block
+7eb6dc42c98b,low_health_factor,review,1.0133470435181375,1.05,Verify current debt and oracle on a common block
+74bfa61f12fc,low_health_factor,review,1.0144500807200034,1.05,Verify current debt and oracle on a common block
+3c837539365d,low_health_factor,review,1.0129661953074338,1.05,Verify current debt and oracle on a common block
+01032f251a4b,low_health_factor,review,1.0469207162828575,1.05,Verify current debt and oracle on a common block
+149ecf1279eb,low_health_factor,review,1.0360844339410633,1.05,Verify current debt and oracle on a common block
+31d4e6432849,low_health_factor,review,1.0250401043215356,1.05,Verify current debt and oracle on a common block
+8c020d0260d0,low_health_factor,review,1.0157769735845377,1.05,Verify current debt and oracle on a common block
+700891becfb0,low_health_factor,review,1.0353232641446497,1.05,Verify current debt and oracle on a common block
+3c3a2c47159e,low_health_factor,review,1.0378140351178098,1.05,Verify current debt and oracle on a common block
+39b44aaafcc2,low_health_factor,review,1.0458944408600799,1.05,Verify current debt and oracle on a common block
+42c485bc19c1,low_health_factor,review,1.0386479045958763,1.05,Verify current debt and oracle on a common block
+ad938339bb09,low_health_factor,review,1.0283311685619307,1.05,Verify current debt and oracle on a common block
+0ced0bc13652,low_health_factor,review,1.0343862855984078,1.05,Verify current debt and oracle on a common block
+baa42b4a7631,low_health_factor,review,1.0231606771975348,1.05,Verify current debt and oracle on a common block
+54cc78db0ccd,low_health_factor,review,1.045064389594634,1.05,Verify current debt and oracle on a common block
+51ae8e1c364f,low_health_factor,review,1.0063746698747433,1.05,Verify current debt and oracle on a common block
+e99813410eca,low_health_factor,review,1.0112215471363153,1.05,Verify current debt and oracle on a common block
+204d4793d8ed,low_health_factor,review,1.024034349899679,1.05,Verify current debt and oracle on a common block
+5eccf1642def,low_health_factor,review,1.0482956104575247,1.05,Verify current debt and oracle on a common block
+f3ff95d000ad,low_health_factor,review,1.0302654992384772,1.05,Verify current debt and oracle on a common block
+19dde647e9ee,low_health_factor,review,1.0417474927695838,1.05,Verify current debt and oracle on a common block
+a8af50f196ae,low_health_factor,review,1.0472053199002214,1.05,Verify current debt and oracle on a common block
+07f89d7b8bcd,low_health_factor,review,1.0478680501437416,1.05,Verify current debt and oracle on a common block
+9f7e2b5a206e,low_health_factor,review,1.0422612869095242,1.05,Verify current debt and oracle on a common block
+751d89e94616,low_health_factor,review,1.0452094350048395,1.05,Verify current debt and oracle on a common block
+44910b26b3d4,low_health_factor,review,1.0354561170372536,1.05,Verify current debt and oracle on a common block
+45cc06d2e375,low_health_factor,review,1.0396756389731399,1.05,Verify current debt and oracle on a common block
+c35147ef5a8d,low_health_factor,review,1.0414550455550735,1.05,Verify current debt and oracle on a common block
+6287268a7046,low_health_factor,review,1.0099496620829929,1.05,Verify current debt and oracle on a common block
+df451a4f699f,low_health_factor,review,1.0140385687555333,1.05,Verify current debt and oracle on a common block
+f53975f39e85,low_health_factor,review,1.04751245075737,1.05,Verify current debt and oracle on a common block
+b0ba6ba8929f,low_health_factor,review,1.0279198856094736,1.05,Verify current debt and oracle on a common block
+4ef24b772e40,low_health_factor,review,1.0387178324298632,1.05,Verify current debt and oracle on a common block
+2fddb3a2e230,low_health_factor,review,1.0330153807871514,1.05,Verify current debt and oracle on a common block
+9bbfbd813b87,low_health_factor,review,1.032964753187895,1.05,Verify current debt and oracle on a common block
+be45635e0492,low_health_factor,review,1.0272108268250941,1.05,Verify current debt and oracle on a common block
+e604d0b634c8,low_health_factor,review,1.0296729706831664,1.05,Verify current debt and oracle on a common block
+2b5041047d44,low_health_factor,review,1.0347228401944168,1.05,Verify current debt and oracle on a common block
+36f84f8e25a7,low_health_factor,review,1.0480453255686686,1.05,Verify current debt and oracle on a common block
+b05173d02592,low_health_factor,review,1.0029667722936821,1.05,Verify current debt and oracle on a common block
+26d7a87903ee,low_health_factor,review,1.0475604462135941,1.05,Verify current debt and oracle on a common block
+6f30175894ef,low_health_factor,review,1.0302373421949171,1.05,Verify current debt and oracle on a common block
+e3033df35a86,low_health_factor,review,1.0487308832882403,1.05,Verify current debt and oracle on a common block
+43a8b609a59d,low_health_factor,review,1.0454319227249989,1.05,Verify current debt and oracle on a common block
+5764c4294cd9,low_health_factor,review,1.016206191757307,1.05,Verify current debt and oracle on a common block
+2e5111e72b8c,low_health_factor,review,1.0113220497135895,1.05,Verify current debt and oracle on a common block
+91c3e678b5cc,low_health_factor,review,1.0,1.05,Verify current debt and oracle on a common block
+38f35c41183e,low_health_factor,review,1.014662056412607,1.05,Verify current debt and oracle on a common block
+babed9a5a9b4,low_health_factor,review,1.0235568460740403,1.05,Verify current debt and oracle on a common block

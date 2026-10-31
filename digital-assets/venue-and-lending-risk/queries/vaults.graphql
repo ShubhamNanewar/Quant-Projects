@@ -1,0 +1,17 @@
+{ vaults(first: 5, orderBy: TotalAssetsUsd, orderDirection: Desc,
+    where: {chainId_in: [1], listed: true, assetSymbol_in: ["USDC"]}) {
+  items {
+    address name asset { symbol decimals } warnings { type level }
+    state {
+      timestamp blockNumber totalAssetsUsd totalAssets fee timelock
+      allocation {
+        supplyAssets supplyAssetsUsd supplyCap withdrawQueueIndex
+        market {
+          marketId lltv collateralAsset { symbol address }
+          oracle { address type }
+          state { supplyAssets borrowAssets utilization timestamp }
+        }
+      }
+    }
+  }
+} }

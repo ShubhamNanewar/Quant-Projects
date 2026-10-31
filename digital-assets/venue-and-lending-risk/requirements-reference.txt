@@ -1,0 +1,5 @@
+# Versions used for the archived research run.
+requests==2.32.5
+numpy==1.26.4
+pandas==2.2.3
+matplotlib==3.9.4

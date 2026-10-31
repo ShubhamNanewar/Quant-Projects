@@ -1,0 +1,1495 @@
+{
+  "completed_at": "2026-10-31T10:39:20.421781+00:00",
+  "settings": {
+    "rounds": 24,
+    "interval_seconds": 8.0,
+    "pair": "ETH/USD",
+    "position_page_cap": 20,
+    "selection": "30 largest listed non-idle Ethereum markets by supply USD; top 5 listed USDC V1 vaults",
+    "position_market_ids": [
+      "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64",
+      "0x1e9d614631a7df0ec07fb05b2c8cb2491575fd1a63a33bf187a6afb295a4fc64",
+      "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+    ],
+    "contract_revision": "9cf6d5b844625ba108e36d1cf911f5d2faf7c136",
+    "initial_collection_completed_at": "2026-10-31T10:38:40.959460+00:00"
+  },
+  "requests": [
+    {
+      "file": "ConstantsLib.sol.txt",
+      "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/9cf6d5b844625ba108e36d1cf911f5d2faf7c136/src/libraries/ConstantsLib.sol",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:33.274348+00:00",
+          "finished": "2026-10-31T10:35:33.491964+00:00",
+          "status": 200,
+          "elapsed_ms": 217.61983400000062
+        }
+      ],
+      "sha256": "c8a5e5e569f95547e79f361a110a651857459288888542edff4fadc51091fc41",
+      "bytes": 764,
+      "http_date": "Sat, 31 Oct 2026 10:35:33 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "Morpho.sol.txt",
+      "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/9cf6d5b844625ba108e36d1cf911f5d2faf7c136/src/Morpho.sol",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:32.828112+00:00",
+          "finished": "2026-10-31T10:35:33.060629+00:00",
+          "status": 200,
+          "elapsed_ms": 232.5409169999997
+        }
+      ],
+      "sha256": "bc0f0e49d54ccc94557b20b1a1d962f6b64bb3cd7c57c1e74f76e51a47ffa0f6",
+      "bytes": 22081,
+      "http_date": "Sat, 31 Oct 2026 10:35:33 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "SharesMathLib.sol.txt",
+      "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/9cf6d5b844625ba108e36d1cf911f5d2faf7c136/src/libraries/SharesMathLib.sol",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:33.062668+00:00",
+          "finished": "2026-10-31T10:35:33.272713+00:00",
+          "status": 200,
+          "elapsed_ms": 210.049291999999
+        }
+      ],
+      "sha256": "bfd74b35b0d9787dc0858c17a2655c2ae4ea9a9bcb68ccbe6fc5c09b36b6ff54",
+      "bytes": 2347,
+      "http_date": "Sat, 31 Oct 2026 10:35:33 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "coinbase_book_000.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:33.494690+00:00",
+          "finished": "2026-10-31T10:35:33.589148+00:00",
+          "status": 200,
+          "elapsed_ms": 94.48141700000079
+        }
+      ],
+      "sha256": "8fba5ecc77553a92f2aaa7cd29945a63de08075bf09a4522a8cc9fd83dc05e40",
+      "bytes": 476336,
+      "http_date": "Sat, 31 Oct 2026 10:35:33 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_001.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:41.610542+00:00",
+          "finished": "2026-10-31T10:35:41.699196+00:00",
+          "status": 200,
+          "elapsed_ms": 88.64741700000067
+        }
+      ],
+      "sha256": "f52f4de50aa492e997dd614563bb58572479b30cfe8cc3d873f8d20989aa4cbc",
+      "bytes": 476490,
+      "http_date": "Sat, 31 Oct 2026 10:35:41 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_002.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:49.724475+00:00",
+          "finished": "2026-10-31T10:35:49.799050+00:00",
+          "status": 200,
+          "elapsed_ms": 74.5698329999982
+        }
+      ],
+      "sha256": "490b85f9a88236da8fdc7972a9cc49ab69bd5830d0cae83e87bf2a55b9fcc421",
+      "bytes": 476428,
+      "http_date": "Sat, 31 Oct 2026 10:35:49 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_003.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:57.828645+00:00",
+          "finished": "2026-10-31T10:35:57.896817+00:00",
+          "status": 200,
+          "elapsed_ms": 68.16687499999574
+        }
+      ],
+      "sha256": "6f3e02b816860f55ccdd3d7c92a2f2be2835883277ffbf488204d24ecf71c48c",
+      "bytes": 476233,
+      "http_date": "Sat, 31 Oct 2026 10:35:57 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_004.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:05.925472+00:00",
+          "finished": "2026-10-31T10:36:05.989809+00:00",
+          "status": 200,
+          "elapsed_ms": 64.31804199999647
+        }
+      ],
+      "sha256": "07b613221e18d0667eeb61a3f69ce5928dac2c49b7fe4a889cf0c2126b142a17",
+      "bytes": 476223,
+      "http_date": "Sat, 31 Oct 2026 10:36:05 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_005.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:14.009270+00:00",
+          "finished": "2026-10-31T10:36:14.079374+00:00",
+          "status": 200,
+          "elapsed_ms": 70.08891699999964
+        }
+      ],
+      "sha256": "27407e96e8b9dfe01f97a4669c15026d66ec9364ef229f31f662f42afd0e3b8f",
+      "bytes": 476478,
+      "http_date": "Sat, 31 Oct 2026 10:36:14 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_006.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:22.101458+00:00",
+          "finished": "2026-10-31T10:36:22.185286+00:00",
+          "status": 200,
+          "elapsed_ms": 83.80116699999718
+        }
+      ],
+      "sha256": "48ea8fe1744b766df06c90488bbb539c0cebe5a497034b42536cd836c4b5de50",
+      "bytes": 476633,
+      "http_date": "Sat, 31 Oct 2026 10:36:22 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_007.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:30.203261+00:00",
+          "finished": "2026-10-31T10:36:30.282033+00:00",
+          "status": 200,
+          "elapsed_ms": 78.76466599999787
+        }
+      ],
+      "sha256": "ece8079442c2323410616c285f0db8f87c3bb5132ab6e9ca2b38592592078286",
+      "bytes": 476273,
+      "http_date": "Sat, 31 Oct 2026 10:36:30 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_008.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:38.303347+00:00",
+          "finished": "2026-10-31T10:36:38.429423+00:00",
+          "status": 200,
+          "elapsed_ms": 126.08079199999622
+        }
+      ],
+      "sha256": "084e1c46734c04ccc3fa17d0591816c382d483532bcccb6ec0069d1527ff235e",
+      "bytes": 476706,
+      "http_date": "Sat, 31 Oct 2026 10:36:38 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_009.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:46.448665+00:00",
+          "finished": "2026-10-31T10:36:46.532294+00:00",
+          "status": 200,
+          "elapsed_ms": 83.61200000000224
+        }
+      ],
+      "sha256": "ab6c3c505cf9aa56a68e75a22222025536b4e25663b1a914c818afc8e74bc233",
+      "bytes": 476227,
+      "http_date": "Sat, 31 Oct 2026 10:36:46 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_010.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:54.562106+00:00",
+          "finished": "2026-10-31T10:36:54.760951+00:00",
+          "status": 200,
+          "elapsed_ms": 198.84495899999877
+        }
+      ],
+      "sha256": "461c3b7afaa14c54cbcbf2d159d1fe050dd27b0d34d8b62be3d149ea6ca83b7d",
+      "bytes": 476682,
+      "http_date": "Sat, 31 Oct 2026 10:36:54 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_011.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:02.781311+00:00",
+          "finished": "2026-10-31T10:37:02.867410+00:00",
+          "status": 200,
+          "elapsed_ms": 86.09420800000578
+        }
+      ],
+      "sha256": "7e4a454b3d9b665c85814c9cd30e98481debdaa080726f5ba115ee9a5631e70e",
+      "bytes": 476539,
+      "http_date": "Sat, 31 Oct 2026 10:37:02 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_012.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:10.886816+00:00",
+          "finished": "2026-10-31T10:37:10.955986+00:00",
+          "status": 200,
+          "elapsed_ms": 69.16316599999561
+        }
+      ],
+      "sha256": "2f91aeba1eddbe0b6fdffe8a007bdaa61529fde06465004ee4c478d2d09ade56",
+      "bytes": 476089,
+      "http_date": "Sat, 31 Oct 2026 10:37:10 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_013.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:18.987148+00:00",
+          "finished": "2026-10-31T10:37:19.342302+00:00",
+          "status": 200,
+          "elapsed_ms": 355.1465829999927
+        }
+      ],
+      "sha256": "1fa4798ec6127f0d93fe246ae91657c4bfa46c550c0f123fec615526e963eddb",
+      "bytes": 476233,
+      "http_date": "Sat, 31 Oct 2026 10:37:19 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "coinbase_book_014.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:27.361012+00:00",
+          "finished": "2026-10-31T10:37:27.425892+00:00",
+          "status": 200,
+          "elapsed_ms": 64.88116700001001
+        }
+      ],
+      "sha256": "56341ee0191cad4f06640ac3e17e9ebfb67446f9927c4ffb45741c7fba389f5e",
+      "bytes": 476446,
+      "http_date": "Sat, 31 Oct 2026 10:37:27 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_015.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:35.444511+00:00",
+          "finished": "2026-10-31T10:37:35.826359+00:00",
+          "status": 200,
+          "elapsed_ms": 381.8467090000013
+        }
+      ],
+      "sha256": "02e8565c71e5182e50438c09b215b6313cd107368785ae8e50f85d75a5d843eb",
+      "bytes": 476333,
+      "http_date": "Sat, 31 Oct 2026 10:37:35 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "coinbase_book_016.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:43.838204+00:00",
+          "finished": "2026-10-31T10:37:43.913702+00:00",
+          "status": 200,
+          "elapsed_ms": 75.49495800000727
+        }
+      ],
+      "sha256": "fc2e9e1aa4c687bd0a42891a3aa5abd7af986fb70fd551fa631b30b53f7053a8",
+      "bytes": 476410,
+      "http_date": "Sat, 31 Oct 2026 10:37:43 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_017.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:51.936987+00:00",
+          "finished": "2026-10-31T10:37:52.001557+00:00",
+          "status": 200,
+          "elapsed_ms": 64.56274999999323
+        }
+      ],
+      "sha256": "a9e43ceb9e0853a61e123da89d2e0a55f6a265ae751f368d31239b3b219ce811",
+      "bytes": 476521,
+      "http_date": "Sat, 31 Oct 2026 10:37:52 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_018.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:00.040039+00:00",
+          "finished": "2026-10-31T10:38:00.107561+00:00",
+          "status": 200,
+          "elapsed_ms": 67.51991599998064
+        }
+      ],
+      "sha256": "9f9313d9e86c988bf5d3e89fe966e074d5e1ff021e6c6072e96e17f713a195b7",
+      "bytes": 476351,
+      "http_date": "Sat, 31 Oct 2026 10:38:00 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_019.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:08.140720+00:00",
+          "finished": "2026-10-31T10:38:08.214834+00:00",
+          "status": 200,
+          "elapsed_ms": 74.10004200002618
+        }
+      ],
+      "sha256": "34ae9677e4701ffd720f8a225f4e5b31b6b7104741b0698f01207b0d0c33c28b",
+      "bytes": 476131,
+      "http_date": "Sat, 31 Oct 2026 10:38:08 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_020.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:16.239378+00:00",
+          "finished": "2026-10-31T10:38:16.318779+00:00",
+          "status": 200,
+          "elapsed_ms": 79.38724999999636
+        }
+      ],
+      "sha256": "9bbf55ee6fb1759649ff5468f94194180848d48206ff5a5b98faf01a4f5bee34",
+      "bytes": 476314,
+      "http_date": "Sat, 31 Oct 2026 10:38:16 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_book_021.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:24.336909+00:00",
+          "finished": "2026-10-31T10:38:24.693763+00:00",
+          "status": 200,
+          "elapsed_ms": 356.85750000001804
+        }
+      ],
+      "sha256": "00c603a9590b0e548e920c88a9820ccda27a10eb458be0e94cc1875c7af76668",
+      "bytes": 476867,
+      "http_date": "Sat, 31 Oct 2026 10:38:24 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "coinbase_book_022.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:32.720648+00:00",
+          "finished": "2026-10-31T10:38:32.800545+00:00",
+          "status": 200,
+          "elapsed_ms": 79.89687499997444
+        }
+      ],
+      "sha256": "bbb1a418d7dd6bfae5bd14457b81de6cd0d776c0d20c330d8b33330cd6fe5766",
+      "bytes": 476898,
+      "http_date": "Sat, 31 Oct 2026 10:38:32 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "coinbase_book_023.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/book?level=2",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:40.830836+00:00",
+          "finished": "2026-10-31T10:38:40.913993+00:00",
+          "status": 200,
+          "elapsed_ms": 83.14691699999344
+        }
+      ],
+      "sha256": "c8437bb38db035c736051f26c941074286ed66a29ec4b71bbebb379a6f81875f",
+      "bytes": 476034,
+      "http_date": "Sat, 31 Oct 2026 10:38:40 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "coinbase_hourly.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.366274+00:00",
+          "finished": "2026-10-31T10:35:25.435234+00:00",
+          "status": 200,
+          "elapsed_ms": 68.98533299999998
+        }
+      ],
+      "sha256": "fc3111d8a0b81ba09baf0fedae3cdacf899e2af772ce268ef978e1b559c6ba52",
+      "bytes": 20367,
+      "http_date": "Sat, 31 Oct 2026 10:35:25 GMT",
+      "cache_age": "87"
+    },
+    {
+      "file": "coinbase_product.json",
+      "url": "https://api.exchange.coinbase.com/products/ETH-USD",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.069259+00:00",
+          "finished": "2026-10-31T10:35:25.185842+00:00",
+          "status": 200,
+          "elapsed_ms": 116.588542
+        }
+      ],
+      "sha256": "06101801afd8d4f2eb2f4a300ee03574121b4db5c24cf2e1f9640de333d05a12",
+      "bytes": 420,
+      "http_date": "Sat, 31 Oct 2026 10:35:25 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "contract_LICENSE.txt",
+      "url": "https://raw.githubusercontent.com/morpho-org/morpho-blue/9cf6d5b844625ba108e36d1cf911f5d2faf7c136/LICENSE",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:39:20.162840+00:00",
+          "finished": "2026-10-31T10:39:20.419491+00:00",
+          "status": 200,
+          "elapsed_ms": 256.68175
+        }
+      ],
+      "sha256": "d8c320ffc0030d1b096ae4732b50d2b811cf95e9a9b7377c1127b2563e0a0388",
+      "bytes": 15220,
+      "http_date": "Sat, 31 Oct 2026 10:39:20 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "contract_revision.json",
+      "url": "https://api.github.com/repos/morpho-org/morpho-blue/commits/main",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:32.534489+00:00",
+          "finished": "2026-10-31T10:35:32.827454+00:00",
+          "status": 200,
+          "elapsed_ms": 292.95508299999983
+        }
+      ],
+      "sha256": "a2a0e2424a6db4f6c2c51e96c80d79d5edc796169e1e0dc7dfd9fe9bc51184f1",
+      "bytes": 6253,
+      "http_date": "Sat, 31 Oct 2026 10:35:32 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_000.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:33.495049+00:00",
+          "finished": "2026-10-31T10:35:33.579154+00:00",
+          "status": 200,
+          "elapsed_ms": 84.1412909999999
+        }
+      ],
+      "sha256": "ff2d7bb0a8945627470345b7f07918ed42093fe98638b046528bbe7249254458",
+      "bytes": 6948,
+      "http_date": "Sat, 31 Oct 2026 10:35:33 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_001.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:41.610971+00:00",
+          "finished": "2026-10-31T10:35:41.714732+00:00",
+          "status": 200,
+          "elapsed_ms": 103.76658399999883
+        }
+      ],
+      "sha256": "fcbfbcf47c2c74eff5b4fe2fb404893f4fb11bbab56702556ccd5335261a3509",
+      "bytes": 6951,
+      "http_date": "Sat, 31 Oct 2026 10:35:41 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_002.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:49.724852+00:00",
+          "finished": "2026-10-31T10:35:49.819632+00:00",
+          "status": 200,
+          "elapsed_ms": 94.79158299999924
+        }
+      ],
+      "sha256": "5bc0060974d1ae39c40f55e66489fb6b1f33fd3f981baedf9120af4516d578d7",
+      "bytes": 6947,
+      "http_date": "Sat, 31 Oct 2026 10:35:49 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_003.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:57.829039+00:00",
+          "finished": "2026-10-31T10:35:57.917156+00:00",
+          "status": 200,
+          "elapsed_ms": 88.12045799999879
+        }
+      ],
+      "sha256": "51a88fc95a287345317071c428503ec109d108a908fe1a057219c9ca0339e386",
+      "bytes": 6951,
+      "http_date": "Sat, 31 Oct 2026 10:35:57 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "kraken_book_004.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:05.925834+00:00",
+          "finished": "2026-10-31T10:36:06.001073+00:00",
+          "status": 200,
+          "elapsed_ms": 75.23837499999786
+        }
+      ],
+      "sha256": "398f69d323b4da387b9e608549cb47ff1e2c3fbe31f02622d9e510ecc16a6eab",
+      "bytes": 6940,
+      "http_date": "Sat, 31 Oct 2026 10:36:06 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "kraken_book_005.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:14.009655+00:00",
+          "finished": "2026-10-31T10:36:14.093751+00:00",
+          "status": 200,
+          "elapsed_ms": 84.09958299999687
+        }
+      ],
+      "sha256": "ac587f8a126192c592568d94ca3f107ac935e7b1fbe02c3baf5acc172c51bf4b",
+      "bytes": 6946,
+      "http_date": "Sat, 31 Oct 2026 10:36:14 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "kraken_book_006.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:22.101895+00:00",
+          "finished": "2026-10-31T10:36:22.181431+00:00",
+          "status": 200,
+          "elapsed_ms": 79.5507079999993
+        }
+      ],
+      "sha256": "2d017ca1772a4186f1399ce88556cfab1d7741bca8d2889e328a523f80c0208e",
+      "bytes": 6953,
+      "http_date": "Sat, 31 Oct 2026 10:36:22 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "kraken_book_007.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:30.203537+00:00",
+          "finished": "2026-10-31T10:36:30.271888+00:00",
+          "status": 200,
+          "elapsed_ms": 68.38545799999451
+        }
+      ],
+      "sha256": "1df45d8d9bd2a7b570253c4371750b05bccc4e0eb75fed6cb8e0e54194f8ee44",
+      "bytes": 6949,
+      "http_date": "Sat, 31 Oct 2026 10:36:30 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_008.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:38.303623+00:00",
+          "finished": "2026-10-31T10:36:38.390462+00:00",
+          "status": 200,
+          "elapsed_ms": 86.85362499998917
+        }
+      ],
+      "sha256": "88d4775a9bbb9b9bf310fcceec3de75c5666086418e3817f687b36bbce60626e",
+      "bytes": 6949,
+      "http_date": "Sat, 31 Oct 2026 10:36:38 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_009.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:46.449063+00:00",
+          "finished": "2026-10-31T10:36:46.553999+00:00",
+          "status": 200,
+          "elapsed_ms": 104.93754200000183
+        }
+      ],
+      "sha256": "f972a2b712a6ed46607e08766855f7c22cefef6d99578432a22ce362ec6ab63c",
+      "bytes": 6950,
+      "http_date": "Sat, 31 Oct 2026 10:36:46 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_010.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:36:54.562532+00:00",
+          "finished": "2026-10-31T10:36:54.637395+00:00",
+          "status": 200,
+          "elapsed_ms": 74.8773749999998
+        }
+      ],
+      "sha256": "31cc04688916af4efa05b578b26a9548998004aa65eda1d482dc68b8962968f9",
+      "bytes": 6946,
+      "http_date": "Sat, 31 Oct 2026 10:36:54 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_011.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:02.781758+00:00",
+          "finished": "2026-10-31T10:37:02.861200+00:00",
+          "status": 200,
+          "elapsed_ms": 79.45320899999331
+        }
+      ],
+      "sha256": "f2941c68c4c5817776998934bf12ee79dfffebc301049b9a453f04958b4ab5c6",
+      "bytes": 6950,
+      "http_date": "Sat, 31 Oct 2026 10:37:02 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_012.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:10.887260+00:00",
+          "finished": "2026-10-31T10:37:10.978218+00:00",
+          "status": 200,
+          "elapsed_ms": 90.96154199998807
+        }
+      ],
+      "sha256": "a654037cde7168e0d34563b85dcd68611d9ba9008a0bfc2927360eaf574f29d6",
+      "bytes": 6944,
+      "http_date": "Sat, 31 Oct 2026 10:37:10 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_013.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:18.987613+00:00",
+          "finished": "2026-10-31T10:37:19.089079+00:00",
+          "status": 200,
+          "elapsed_ms": 101.47337499999765
+        }
+      ],
+      "sha256": "eb80b9645e7562d340841dbe911cfce1834fce7c337a4b68d77a1e0b890a858f",
+      "bytes": 6946,
+      "http_date": "Sat, 31 Oct 2026 10:37:19 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_014.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:27.361370+00:00",
+          "finished": "2026-10-31T10:37:27.426200+00:00",
+          "status": 200,
+          "elapsed_ms": 64.82916699999919
+        }
+      ],
+      "sha256": "1697790e0b0ed2102c4b5519e81d432cf9e3c3d9d6b7486b87eb0e49cd85b68e",
+      "bytes": 6941,
+      "http_date": "Sat, 31 Oct 2026 10:37:27 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_015.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:35.444612+00:00",
+          "finished": "2026-10-31T10:37:35.506965+00:00",
+          "status": 200,
+          "elapsed_ms": 62.355249999995976
+        }
+      ],
+      "sha256": "b9eb4d3f8cf99bb27e931dc41661a9629d1d3f44ef05d4414cbca3242daedf33",
+      "bytes": 6938,
+      "http_date": "Sat, 31 Oct 2026 10:37:35 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_016.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:43.838591+00:00",
+          "finished": "2026-10-31T10:37:43.927962+00:00",
+          "status": 200,
+          "elapsed_ms": 89.37824999998156
+        }
+      ],
+      "sha256": "5c29f40a262e47d30518ab7c21b870d60a0edb1dff1db2fbad693c1ef959a306",
+      "bytes": 6943,
+      "http_date": "Sat, 31 Oct 2026 10:37:43 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_017.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:37:51.937468+00:00",
+          "finished": "2026-10-31T10:37:52.032771+00:00",
+          "status": 200,
+          "elapsed_ms": 95.29408299999886
+        }
+      ],
+      "sha256": "70708869f206f4d46016a3f58ddbae32ec0b173ac63045594e1c2b0829124b9d",
+      "bytes": 6943,
+      "http_date": "Sat, 31 Oct 2026 10:37:52 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_018.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:00.040185+00:00",
+          "finished": "2026-10-31T10:38:00.128321+00:00",
+          "status": 200,
+          "elapsed_ms": 88.1355420000034
+        }
+      ],
+      "sha256": "4691423a23d94c4c402b3234ca6fa7c3005bece2c37209a9c01516f5c73f392d",
+      "bytes": 6941,
+      "http_date": "Sat, 31 Oct 2026 10:38:00 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_019.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:08.141013+00:00",
+          "finished": "2026-10-31T10:38:08.226925+00:00",
+          "status": 200,
+          "elapsed_ms": 85.91029100000469
+        }
+      ],
+      "sha256": "982c452ac1527457e3ee8d16e6b32b74a1d7afac4ea427d4b05ae23a240c43c0",
+      "bytes": 6947,
+      "http_date": "Sat, 31 Oct 2026 10:38:08 GMT",
+      "cache_age": "0"
+    },
+    {
+      "file": "kraken_book_020.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:16.239739+00:00",
+          "finished": "2026-10-31T10:38:16.330061+00:00",
+          "status": 200,
+          "elapsed_ms": 90.32237499999951
+        }
+      ],
+      "sha256": "0168a12663422e99b6fb896ac2590ad7eb119339a230174179fc87c4a3d24115",
+      "bytes": 6952,
+      "http_date": "Sat, 31 Oct 2026 10:38:16 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_021.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:24.337265+00:00",
+          "finished": "2026-10-31T10:38:24.413536+00:00",
+          "status": 200,
+          "elapsed_ms": 76.28404100000807
+        }
+      ],
+      "sha256": "661729e10360fe6e183c51ac7fc5dcc9a7fe6bb535d30db5043696515c01f6a5",
+      "bytes": 6950,
+      "http_date": "Sat, 31 Oct 2026 10:38:24 GMT",
+      "cache_age": "1"
+    },
+    {
+      "file": "kraken_book_022.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:32.721024+00:00",
+          "finished": "2026-10-31T10:38:32.795733+00:00",
+          "status": 200,
+          "elapsed_ms": 74.72387499998945
+        }
+      ],
+      "sha256": "9c76e3f7de1f67410b2e771c3be52b9d7c4976a2a8c6c4cfecf4b2792cf91d96",
+      "bytes": 6944,
+      "http_date": "Sat, 31 Oct 2026 10:38:32 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_book_023.json",
+      "url": "https://api.kraken.com/0/public/Depth?pair=ETHUSD&count=100",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:38:40.831217+00:00",
+          "finished": "2026-10-31T10:38:40.957015+00:00",
+          "status": 200,
+          "elapsed_ms": 125.81570800000463
+        }
+      ],
+      "sha256": "f51db23098528003379449878e860e39755709210817aebd90d13492734e9dbf",
+      "bytes": 6951,
+      "http_date": "Sat, 31 Oct 2026 10:38:40 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_hourly.json",
+      "url": "https://api.kraken.com/0/public/OHLC?pair=ETHUSD&interval=60",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.286981+00:00",
+          "finished": "2026-10-31T10:35:25.363714+00:00",
+          "status": 200,
+          "elapsed_ms": 76.73758399999997
+        }
+      ],
+      "sha256": "f4095a02ad9c86a06699abb9c614e37b09a1bd7bb85d7a70309e6e46c0abdf2d",
+      "bytes": 60047,
+      "http_date": "Sat, 31 Oct 2026 10:35:25 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "kraken_product.json",
+      "url": "https://api.kraken.com/0/public/AssetPairs?pair=ETHUSD",
+      "method": "GET",
+      "body": null,
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.186680+00:00",
+          "finished": "2026-10-31T10:35:25.285436+00:00",
+          "status": 200,
+          "elapsed_ms": 98.77212499999999
+        }
+      ],
+      "sha256": "3141431112037fe81acc4249c9fb7844c3b5cacdc68247e312764832ecf68d96",
+      "bytes": 562,
+      "http_date": "Sat, 31 Oct 2026 10:35:25 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_markets.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "{ markets(first: 30, orderBy: SupplyAssetsUsd, orderDirection: Desc,\n    where: {chainId_in: [1], listed: true, isIdle: false}) {\n  items {\n    marketId lltv listed irmAddress\n    loanAsset { symbol decimals address }\n    collateralAsset { symbol decimals address }\n    oracle { address type }\n    warnings { type level }\n    state {\n      blockNumber timestamp price supplyAssets borrowAssets borrowShares\n      supplyAssetsUsd borrowAssetsUsd liquidityAssetsUsd utilization\n      supplyApy borrowApy\n    }\n  }\n} }\n"
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.438368+00:00",
+          "finished": "2026-10-31T10:35:25.707472+00:00",
+          "status": 200,
+          "elapsed_ms": 269.11770900000005
+        }
+      ],
+      "sha256": "bfb132abb0e3135cd7a3896e6c348eec66f592d38499bc943ad539da6f3a053f",
+      "bytes": 27506,
+      "http_date": "Sat, 31 Oct 2026 10:35:25 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_oracles_end.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "{ markets(first: 30, orderBy: SupplyAssetsUsd, orderDirection: Desc,\n    where: {chainId_in: [1], listed: true, isIdle: false}) {\n  items {\n    marketId state { price timestamp blockNumber }\n    oracle {\n      address type data {\n        ... on MorphoChainlinkOracleV2Data {\n          scaleFactor\n          baseFeedOne { address decimals } baseFeedTwo { address decimals }\n          quoteFeedOne { address decimals } quoteFeedTwo { address decimals }\n          baseOracleVault { address } quoteOracleVault { address }\n        }\n        ... on MorphoChainlinkOracleData {\n          scaleFactor\n          baseFeedOne { address decimals } baseFeedTwo { address decimals }\n          quoteFeedOne { address decimals } quoteFeedTwo { address decimals }\n          baseOracleVault { address }\n        }\n      }\n    }\n  }\n} }\n"
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:39:19.684955+00:00",
+          "finished": "2026-10-31T10:39:20.160940+00:00",
+          "status": 200,
+          "elapsed_ms": 476.0002080000001
+        }
+      ],
+      "sha256": "0f8bfa520b31c42dfad39ba3559af0873fba99700d5095a8c52270648259df07",
+      "bytes": 17336,
+      "http_date": "Sat, 31 Oct 2026 10:39:20 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_0_00.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64"
+          ],
+          "skip": 0
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.915665+00:00",
+          "finished": "2026-10-31T10:35:26.199232+00:00",
+          "status": 200,
+          "elapsed_ms": 283.55033399999996
+        }
+      ],
+      "sha256": "1c661d71328f9fab016fe5ed1a9522d373f50774c84cf4a80e1e1059d234bc9e",
+      "bytes": 40411,
+      "http_date": "Sat, 31 Oct 2026 10:35:26 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_0_01.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64"
+          ],
+          "skip": 100
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:26.406034+00:00",
+          "finished": "2026-10-31T10:35:26.674149+00:00",
+          "status": 200,
+          "elapsed_ms": 268.124542
+        }
+      ],
+      "sha256": "a4a6cc0ca8a6904570bafd155ab8c1890575412ada8cf564dcb34e4d4323830f",
+      "bytes": 40060,
+      "http_date": "Sat, 31 Oct 2026 10:35:26 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_0_02.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64"
+          ],
+          "skip": 200
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:26.883297+00:00",
+          "finished": "2026-10-31T10:35:27.822039+00:00",
+          "status": 200,
+          "elapsed_ms": 938.74875
+        }
+      ],
+      "sha256": "fc9df4739a49539fc44a65db8f6c1b274fa6815af38e8bc71b7ef16eb6afdc98",
+      "bytes": 39691,
+      "http_date": "Sat, 31 Oct 2026 10:35:27 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_0_03.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64"
+          ],
+          "skip": 300
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:28.031219+00:00",
+          "finished": "2026-10-31T10:35:28.224333+00:00",
+          "status": 200,
+          "elapsed_ms": 193.10574999999997
+        }
+      ],
+      "sha256": "814b411a7f0b90147be8f0944c5e85d7974c04132f817e7e89bfe64cc98436a0",
+      "bytes": 38875,
+      "http_date": "Sat, 31 Oct 2026 10:35:28 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_0_04.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x64d65c9a2d91c36d56fbc42d69e979335320169b3df63bf92789e2c8883fcc64"
+          ],
+          "skip": 400
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:28.431779+00:00",
+          "finished": "2026-10-31T10:35:28.617330+00:00",
+          "status": 200,
+          "elapsed_ms": 185.56916700000014
+        }
+      ],
+      "sha256": "c066884fae816cc45924717940009a0e8338322d19f53c07e1b0df1492ddc9f4",
+      "bytes": 16690,
+      "http_date": "Sat, 31 Oct 2026 10:35:28 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_1_00.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x1e9d614631a7df0ec07fb05b2c8cb2491575fd1a63a33bf187a6afb295a4fc64"
+          ],
+          "skip": 0
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:28.621583+00:00",
+          "finished": "2026-10-31T10:35:28.780164+00:00",
+          "status": 200,
+          "elapsed_ms": 158.59654199999972
+        }
+      ],
+      "sha256": "3480b78f796a424f0c0446734fd8a34a352a4a26fbf10f2e30330390993d2ed3",
+      "bytes": 40690,
+      "http_date": "Sat, 31 Oct 2026 10:35:28 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_1_01.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x1e9d614631a7df0ec07fb05b2c8cb2491575fd1a63a33bf187a6afb295a4fc64"
+          ],
+          "skip": 100
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:28.987968+00:00",
+          "finished": "2026-10-31T10:35:29.183522+00:00",
+          "status": 200,
+          "elapsed_ms": 195.55233299999975
+        }
+      ],
+      "sha256": "8981a4d205f50ef77fb496cca360f375c53af64210aa7f3f5befeb9a30037a61",
+      "bytes": 40185,
+      "http_date": "Sat, 31 Oct 2026 10:35:29 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_1_02.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x1e9d614631a7df0ec07fb05b2c8cb2491575fd1a63a33bf187a6afb295a4fc64"
+          ],
+          "skip": 200
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:29.391421+00:00",
+          "finished": "2026-10-31T10:35:29.561782+00:00",
+          "status": 200,
+          "elapsed_ms": 170.36437499999923
+        }
+      ],
+      "sha256": "b49a3791ddd9409775f98f7cd313ce307f5066a4357952b92a39b8b80b47fa43",
+      "bytes": 22330,
+      "http_date": "Sat, 31 Oct 2026 10:35:29 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_00.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 0
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:29.564557+00:00",
+          "finished": "2026-10-31T10:35:29.784660+00:00",
+          "status": 200,
+          "elapsed_ms": 220.114959
+        }
+      ],
+      "sha256": "0b2aadb416f1f3ae0c90ac3169aff47f956f0a62c8f130d33753d3c628c408ce",
+      "bytes": 40438,
+      "http_date": "Sat, 31 Oct 2026 10:35:29 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_01.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 100
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:29.989505+00:00",
+          "finished": "2026-10-31T10:35:30.163129+00:00",
+          "status": 200,
+          "elapsed_ms": 173.63916600000007
+        }
+      ],
+      "sha256": "c8ed8695069d4832787f2e4096d6dcff90655c7fe8d1bfed43a996ea7f1c103a",
+      "bytes": 40138,
+      "http_date": "Sat, 31 Oct 2026 10:35:30 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_02.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 200
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:30.371110+00:00",
+          "finished": "2026-10-31T10:35:30.560783+00:00",
+          "status": 200,
+          "elapsed_ms": 189.68791700000054
+        }
+      ],
+      "sha256": "dc534cffe6b60b0eec56f916c2951a71d15e85cae45377390c7a63fb819b2bf8",
+      "bytes": 40052,
+      "http_date": "Sat, 31 Oct 2026 10:35:30 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_03.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 300
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:30.769952+00:00",
+          "finished": "2026-10-31T10:35:30.965853+00:00",
+          "status": 200,
+          "elapsed_ms": 195.90483300000017
+        }
+      ],
+      "sha256": "6dc58eeb685454cfbb71946160424e6af02ec5509e150c40c4d8ee14f269cea4",
+      "bytes": 39701,
+      "http_date": "Sat, 31 Oct 2026 10:35:30 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_04.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 400
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:31.174226+00:00",
+          "finished": "2026-10-31T10:35:31.338440+00:00",
+          "status": 200,
+          "elapsed_ms": 164.21749999999946
+        }
+      ],
+      "sha256": "ff4e2b11f58feda35e385ee819b1ddeebff549c35c3a8fc016f343b2b74b3387",
+      "bytes": 39414,
+      "http_date": "Sat, 31 Oct 2026 10:35:31 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_05.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 500
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:31.545990+00:00",
+          "finished": "2026-10-31T10:35:31.745438+00:00",
+          "status": 200,
+          "elapsed_ms": 199.46008299999994
+        }
+      ],
+      "sha256": "fc3c673ac2774e9b0dc0b7eaac90c7935aa6b4ea4123e6d5077e91e6e7fe05fa",
+      "bytes": 38465,
+      "http_date": "Sat, 31 Oct 2026 10:35:31 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_positions_2_06.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "query Positions($ids: [String!], $skip: Int) {\n  marketPositions(first: 100, skip: $skip, orderBy: BorrowShares, orderDirection: Desc,\n    where: {chainId_in: [1], marketUniqueKey_in: $ids, borrowShares_gte: 1}) {\n    items {\n      id healthFactor\n      market { marketId }\n      state { timestamp collateral borrowShares borrowAssets borrowAssetsUsd }\n    }\n  }\n}\n",
+        "variables": {
+          "ids": [
+            "0x3a85e619751152991742810df6ec69ce473daef99e28a64ab2340d7b7ccfee49"
+          ],
+          "skip": 600
+        }
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:31.954040+00:00",
+          "finished": "2026-10-31T10:35:32.531922+00:00",
+          "status": 200,
+          "elapsed_ms": 577.8965000000005
+        }
+      ],
+      "sha256": "9e5e1bd1176e5e5677d2abfaf4aaa47dbb20c1f0ce235bd14527137129cc5464",
+      "bytes": 17164,
+      "http_date": "Sat, 31 Oct 2026 10:35:32 GMT",
+      "cache_age": null
+    },
+    {
+      "file": "morpho_vaults.json",
+      "url": "https://api.morpho.org/graphql",
+      "method": "POST",
+      "body": {
+        "query": "{ vaults(first: 5, orderBy: TotalAssetsUsd, orderDirection: Desc,\n    where: {chainId_in: [1], listed: true, assetSymbol_in: [\"USDC\"]}) {\n  items {\n    address name asset { symbol decimals } warnings { type level }\n    state {\n      timestamp blockNumber totalAssetsUsd totalAssets fee timelock\n      allocation {\n        supplyAssets supplyAssetsUsd supplyCap withdrawQueueIndex\n        market {\n          marketId lltv collateralAsset { symbol address }\n          oracle { address type }\n          state { supplyAssets borrowAssets utilization timestamp }\n        }\n      }\n    }\n  }\n} }\n"
+      },
+      "attempts": [
+        {
+          "started": "2026-10-31T10:35:25.710760+00:00",
+          "finished": "2026-10-31T10:35:25.912364+00:00",
+          "status": 200,
+          "elapsed_ms": 201.615875
+        }
+      ],
+      "sha256": "fea05ac3a34b7f674db427af13df93cf9962cb4f393949b3602deb32fe78789c",
+      "bytes": 30584,
+      "http_date": "Sat, 31 Oct 2026 10:35:25 GMT",
+      "cache_age": null
+    }
+  ]
+}

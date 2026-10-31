@@ -1,0 +1,15 @@
+{ markets(first: 30, orderBy: SupplyAssetsUsd, orderDirection: Desc,
+    where: {chainId_in: [1], listed: true, isIdle: false}) {
+  items {
+    marketId lltv listed irmAddress
+    loanAsset { symbol decimals address }
+    collateralAsset { symbol decimals address }
+    oracle { address type }
+    warnings { type level }
+    state {
+      blockNumber timestamp price supplyAssets borrowAssets borrowShares
+      supplyAssetsUsd borrowAssetsUsd liquidityAssetsUsd utilization
+      supplyApy borrowApy
+    }
+  }
+} }

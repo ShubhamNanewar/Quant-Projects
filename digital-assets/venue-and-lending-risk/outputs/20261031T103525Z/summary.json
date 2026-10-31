@@ -1,0 +1,26 @@
+{
+  "run": "20261031T103525Z",
+  "retrieved_at": "2026-10-31T10:39:20.421781+00:00",
+  "requests": 75,
+  "books": 48,
+  "markets": 30,
+  "positions": 1346,
+  "vaults": 5,
+  "snapshot_seconds": 187.377861,
+  "candles_by_venue": {
+    "coinbase": 349,
+    "kraken": 720
+  },
+  "spread_median_bps": {
+    "coinbase": 0.044571522809335413,
+    "kraken": 0.08913291540109555
+  },
+  "max_gross_bps": 1.2925136716757102,
+  "max_net_bps_at_10bps_per_leg": -18.69008875324152,
+  "high_utilization_markets": 0,
+  "max_utilization_reconciliation_error": 0.0,
+  "max_receipt_skew_seconds": 0.319394,
+  "oracle_observations_paired": 30,
+  "alerts": 63,
+  "contract_revision": "9cf6d5b844625ba108e36d1cf911f5d2faf7c136"
+}

@@ -1,0 +1,22 @@
+{ markets(first: 30, orderBy: SupplyAssetsUsd, orderDirection: Desc,
+    where: {chainId_in: [1], listed: true, isIdle: false}) {
+  items {
+    marketId state { price timestamp blockNumber }
+    oracle {
+      address type data {
+        ... on MorphoChainlinkOracleV2Data {
+          scaleFactor
+          baseFeedOne { address decimals } baseFeedTwo { address decimals }
+          quoteFeedOne { address decimals } quoteFeedTwo { address decimals }
+          baseOracleVault { address } quoteOracleVault { address }
+        }
+        ... on MorphoChainlinkOracleData {
+          scaleFactor
+          baseFeedOne { address decimals } baseFeedTwo { address decimals }
+          quoteFeedOne { address decimals } quoteFeedTwo { address decimals }
+          baseOracleVault { address }
+        }
+      }
+    }
+  }
+} }
