@@ -1,0 +1,90 @@
+[
+  {
+    "file": "annual_2025.html",
+    "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026011378/asml-20251231.htm",
+    "sha256": "913fc46feccf1a2666d336e4dfab2d6ad618ff6993c73d8cbfe051eeca928626",
+    "bytes": 24864721,
+    "checked_at": "2026-11-05T20:12:17.091385+00:00",
+    "cached": true
+  },
+  {
+    "file": "annual_2024.html",
+    "url": "https://www.sec.gov/Archives/edgar/data/937966/000093796625000009/asml-20241231.htm",
+    "sha256": "2c124f66c6c216eadbdb9c0072c926170c66e163f32728833ed72d8426608612",
+    "bytes": 33866007,
+    "checked_at": "2026-11-05T20:12:17.105000+00:00",
+    "cached": true
+  },
+  {
+    "file": "q3_2026.html",
+    "url": "https://www.sec.gov/Archives/edgar/data/937966/000162828026065813/financial_statementsxusx.htm",
+    "sha256": "384f29401c395e8de14d8f4404999084294cd12696fe67539bb132862ab26ec9",
+    "bytes": 28216,
+    "checked_at": "2026-11-05T20:12:17.105327+00:00",
+    "cached": true
+  },
+  {
+    "file": "q4_2025.pdf",
+    "url": "https://ourbrand.asml.com/m/fded19d66e819e4b/original/Financial-statements-US-GAAP-Q4-2025.pdf",
+    "sha256": "bc9f3bc8fdb2104960e103b6fce18d8261e8063722f842cffbf0299e474eb8d1",
+    "bytes": 11583845,
+    "checked_at": "2026-11-05T20:12:17.112532+00:00",
+    "cached": true
+  },
+  {
+    "file": "amat_facts.json",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000006951.json",
+    "sha256": "65ecfedd5bfd3768d30286b52badee080c655cc8d1077524bdb6ca8928380fa7",
+    "bytes": 4552943,
+    "checked_at": "2026-11-05T20:12:17.114375+00:00",
+    "cached": true
+  },
+  {
+    "file": "lam_facts.json",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000707549.json",
+    "sha256": "46289dd93caeb9cf61ad8a0884f51999549c8179f17ad7b0ef9bdadfe9aff626",
+    "bytes": 4110780,
+    "checked_at": "2026-11-05T20:12:17.115995+00:00",
+    "cached": true
+  },
+  {
+    "file": "kla_facts.json",
+    "url": "https://data.sec.gov/api/xbrl/companyfacts/CIK0000319201.json",
+    "sha256": "a79d64d8d151a8fc5256b5df1993c6ad7055a26b6ec93a5565ab9e76a9e43e1f",
+    "bytes": 4955799,
+    "checked_at": "2026-11-05T20:12:17.117924+00:00",
+    "cached": true
+  },
+  {
+    "file": "ASML.AS_price.json",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/ASML.AS?period1=1793664000&period2=1793836800&interval=1d",
+    "sha256": "08b991c8bdf4ed3da64fcca0f1683a989362f35be7f29bc083f5976b003668e1",
+    "bytes": 1356,
+    "checked_at": "2026-11-05T20:12:17.117962+00:00",
+    "cached": true
+  },
+  {
+    "file": "AMAT_price.json",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/AMAT?period1=1793664000&period2=1793836800&interval=1d",
+    "sha256": "0335c0ce1c72aaed3213f934beb01df5b912be4e3b30d65ce4904dd368463c74",
+    "bytes": 1424,
+    "checked_at": "2026-11-05T20:12:17.117989+00:00",
+    "cached": true
+  },
+  {
+    "file": "LRCX_price.json",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/LRCX?period1=1793664000&period2=1793836800&interval=1d",
+    "sha256": "6967098b61a5ef045ae43ea19c18c17e1d817f2f22e5fe59f7f91a5129281393",
+    "bytes": 1429,
+    "checked_at": "2026-11-05T20:12:17.118015+00:00",
+    "cached": true
+  },
+  {
+    "file": "KLAC_price.json",
+    "url": "https://query1.finance.yahoo.com/v8/finance/chart/KLAC?period1=1793664000&period2=1793836800&interval=1d",
+    "sha256": "3e865986d3b2876874c9c1da97deb5055e0612a505024ad24efe207625563f28",
+    "bytes": 1414,
+    "checked_at": "2026-11-05T20:12:17.118042+00:00",
+    "cached": true
+  }
+]

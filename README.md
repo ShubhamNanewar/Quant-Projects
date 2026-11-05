@@ -4,6 +4,7 @@ This repository collects quantitative projects across different areas of finance
 
 ## Project Areas
 
+- `corporate-finance/asml-valuation`: ASML financial analysis, operating forecasts, DCF scenarios, sensitivity analysis and historical peer-multiple comparisons, with an Excel model and research brief.
 - `stochastic-processes/sp500-option-pricing`: return modeling, GBM simulation, and option pricing with Black-Scholes and binomial trees.
 - `stochastic-processes/option-pricing-and-delta-hedging`: numerical option pricing and hedge P&L simulation across rebalancing frequencies.
 - `econometrics/fama-french-panel-analysis`: panel-data analysis of stock excess returns with CAPM and Fama-French factor models across sectors.

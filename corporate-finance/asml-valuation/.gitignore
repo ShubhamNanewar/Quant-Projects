@@ -1,0 +1,7 @@
+node_modules
+__pycache__/
+data/raw/*.html
+data/raw/*.pdf
+data/raw/*_facts.json
+reports/previews/
+*.inspect.ndjson

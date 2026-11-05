@@ -1,0 +1,20 @@
+{
+  "checks": [
+    {
+      "case": 1,
+      "value": 764.9152123222913,
+      "expected": 764.9152123222913
+    },
+    {
+      "case": 2,
+      "value": 558.2657435493604,
+      "expected": 558.2657435493604
+    },
+    {
+      "case": 3,
+      "value": 942.8569342064632,
+      "expected": 942.8569342064632
+    }
+  ],
+  "errorScan": "{\"kind\":\"notice\",\"message\":\"Cell search matched 0 entries.\"}"
+}
