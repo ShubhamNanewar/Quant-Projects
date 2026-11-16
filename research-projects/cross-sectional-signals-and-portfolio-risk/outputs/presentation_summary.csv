@@ -1,0 +1,5 @@
+Strategy,Net CAGR,Sharpe*,Volatility,Daily drawdown,Annual turnover,Rank IC
+Momentum rank,1.54%,0.32,5.25%,-14.36%,4.73,0.035
+Ridge rank,1.20%,0.27,4.81%,-13.57%,6.80,0.025
+Momentum optimised,2.79%,0.60,4.78%,-10.54%,4.99,0.035
+Ridge optimised,1.36%,0.30,4.82%,-12.14%,7.84,0.025

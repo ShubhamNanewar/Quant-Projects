@@ -4,6 +4,8 @@ This repository collects quantitative projects across different areas of finance
 
 ## Project Areas
 
+- [`research-projects/cross-sectional-signals-and-portfolio-risk`](research-projects/cross-sectional-signals-and-portfolio-risk): expanding-window return prediction, constrained portfolio optimisation, cost-aware backtesting and uncertainty analysis across 48 US industries. Includes a full visual report and reproducible diagnostics.
+
 - `corporate-finance/asml-valuation`: ASML financial analysis, operating forecasts, DCF scenarios, sensitivity analysis and historical peer-multiple comparisons, with an Excel model and research brief.
 - `stochastic-processes/sp500-option-pricing`: return modeling, GBM simulation, and option pricing with Black-Scholes and binomial trees.
 - `stochastic-processes/option-pricing-and-delta-hedging`: numerical option pricing and hedge P&L simulation across rebalancing frequencies.
