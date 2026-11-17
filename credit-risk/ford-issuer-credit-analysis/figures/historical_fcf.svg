@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="499" height="185" preserveAspectRatio="xMinYMin meet" viewBox="0 0 499 185" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>...</title>
+	<desc>...</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="499" height="185"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-185)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="0" y="171" style="font-family: Helvetica-Bold; font-size: 11px;fill: rgb(7%,21%,30%); stroke:none;" transform="translate(0,342) scale(1,-1)">Company adjusted free cash flow ($bn)</text>
+			<path d="M 35,32 L 490,32 Z" style="stroke: rgb(50%,50%,50%); stroke-linecap: butt; stroke-width: 1;"/>
+			<rect x="48.0" y="32.0" width="77.0" height="104.34782608695653" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,53%,49%); fill-rule: evenodd;"/>
+			<text x="48.0" y="141.34782608695653" style="font-family: Times-Roman; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,282) scale(1,-1)">6.80</text>
+			<text x="48.0" y="12" style="font-family: Times-Roman; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,24) scale(1,-1)">2023</text>
+			<rect x="188.0" y="32.0" width="77.0" height="102.36857751097983" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,53%,49%); fill-rule: evenodd;"/>
+			<text x="188.0" y="139.36857751097983" style="font-family: Times-Roman; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,278) scale(1,-1)">6.67</text>
+			<text x="188.0" y="12" style="font-family: Times-Roman; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,24) scale(1,-1)">2024</text>
+			<rect x="328.0" y="32.0" width="77.0" height="53.90000191787652" style="stroke: none; stroke-linecap: butt; stroke-width: 1; fill: rgb(0%,53%,49%); fill-rule: evenodd;"/>
+			<text x="328.0" y="90.90000191787652" style="font-family: Times-Roman; font-size: 9px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,181) scale(1,-1)">3.51</text>
+			<text x="328.0" y="12" style="font-family: Times-Roman; font-size: 8px;fill: rgb(0%,0%,0%); stroke:none;" transform="translate(0,24) scale(1,-1)">2025</text>
+		</g>
+	</g>
+</svg>

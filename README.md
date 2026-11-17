@@ -4,6 +4,8 @@ This repository collects quantitative projects across different areas of finance
 
 ## Project Areas
 
+- [`credit-risk/ford-issuer-credit-analysis`](credit-risk/ford-issuer-credit-analysis): Ford issuer credit research with cash-flow reconciliation, debt maturities, liquidity stress scenarios and illustrative bond-price sensitivity; includes a six-page research memo.
+
 - [`research-projects/cross-sectional-signals-and-portfolio-risk`](research-projects/cross-sectional-signals-and-portfolio-risk): expanding-window return prediction, constrained portfolio optimisation, cost-aware backtesting and uncertainty analysis across 48 US industries. Includes a full visual report and reproducible diagnostics.
 
 - `corporate-finance/asml-valuation`: ASML financial analysis, operating forecasts, DCF scenarios, sensitivity analysis and historical peer-multiple comparisons, with an Excel model and research brief.
